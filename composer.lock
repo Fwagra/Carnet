@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "a167c030ab1b6bea1f671adbd823547b",
+    "content-hash": "cc642ae74a8222ca37487e2e53aff6a3",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -639,6 +639,51 @@
                 "schedule"
             ],
             "time": "2016-01-26 21:23:30"
+        },
+        {
+            "name": "narutimateum/toastr-5.2-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/narutimateum/toastr-5.2-laravel.git",
+                "reference": "907c0cb976545d8e3e4e92dac0ef035fc329a21c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/narutimateum/toastr-5.2-laravel/zipball/907c0cb976545d8e3e4e92dac0ef035fc329a21c",
+                "reference": "907c0cb976545d8e3e4e92dac0ef035fc329a21c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": ">=5.2.7",
+                "illuminate/support": ">=5.2.7",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "narutimateum\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Harith Roslin",
+                    "email": "uharith@gmail.com"
+                }
+            ],
+            "description": "toastr.js for Laravel 5.2 easy notification like growl for example",
+            "homepage": "https://github.com/narutimateum/toastr-5.2-laravel",
+            "keywords": [
+                "laravel",
+                "notification",
+                "php",
+                "toastr"
+            ],
+            "time": "2016-01-30 12:10:08"
         },
         {
             "name": "nesbot/carbon",
@@ -3153,7 +3198,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "narutimateum/toastr-5.2-laravel": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

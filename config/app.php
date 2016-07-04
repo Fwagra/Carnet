@@ -155,6 +155,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        narutimateum\Toastr\ToastrServiceProvider::class,
 
     ],
 
@@ -202,6 +203,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Toastr' => narutimateum\Toastr\Facades\Toastr::class,
     ],
 
 ];
