@@ -19,6 +19,7 @@ elixir(function(mix) {
     ]);
 
     mix.scripts([
+        '../../../node_modules/jquery/dist/jquery.min.js',
         '../../../node_modules/material-design-lite/material.min.js',
         '../../../node_modules/toastr/toastr.js'
     ], 'public/js/app.js');

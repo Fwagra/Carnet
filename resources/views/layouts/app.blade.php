@@ -10,19 +10,14 @@
 <body>
     <div class="mdl-layout mdl-js-layout">
         <header class="mdl-layout__header"></header>
-        <div class="mdl-layout__content">
+        <div class="mdl-layout__content main_content">
             @yield('content')
         </div>
         <footer class="mdl-layout__footer">
             @yield('footer')
         </footer>
     </div>
-    @if(Session::has('error'))
-           {{ Toastr::error(Session::get('error')) }}
-    @endif
-    @if(Session::has('message'))
-           {{ Toastr::success(Session::get('message')) }}
-    @endif
     <script src="{{ URL::asset('js/app.js') }}"></script>
+    {!! Toastr::render() !!}
 </body>
 </html>
