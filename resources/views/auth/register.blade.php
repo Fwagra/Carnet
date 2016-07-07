@@ -52,10 +52,9 @@
                                 </span>
                             @endif
                     </div>
-
                     <div class="mdl-card__actions">
                         <button type="submit" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect">
-                            <i class="fa fa-btn fa-user"></i> {!! trans('auth.register_btn') !!}
+                             {!! trans('auth.register_btn') !!}
                         </button>
                     </div>
                 </form>

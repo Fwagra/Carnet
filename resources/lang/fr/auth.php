@@ -21,5 +21,9 @@ return [
     'name_form' => 'Identifiant',
     'password_form' => 'Mot de passe',
     'confirm_password_form' => 'Retapez votre mot de passe',
-    'register_btn' => "S'inscrire"
+    'register_btn' => "S'inscrire",
+    'login_title' => "Connexion",
+    'remember_me' => "Rester connecté",
+    'login_btn' => "Connexion",
+    'forgot_password' => 'Mot de passe oublié?'
 ];
