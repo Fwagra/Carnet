@@ -16,7 +16,7 @@ return [
     'failed' => 'Ces identifiants n\'existent pas.',
     'throttle' => 'Trop de tentatives de connexion. Réessayez dans :seconds secondes.',
     'register_title' => 'Inscription',
-    'name_form' => 'Identifiant',
+    'name_form' => 'Nom',
     'email_form' => 'Email',
     'name_form' => 'Identifiant',
     'password_form' => 'Mot de passe',
@@ -25,5 +25,8 @@ return [
     'login_title' => "Connexion",
     'remember_me' => "Rester connecté",
     'login_btn' => "Connexion",
-    'forgot_password' => 'Mot de passe oublié?'
+    'forgot_password' => 'Mot de passe oublié?',
+    'reset_password_title' =>"Réiniatiliser le mot de passe",
+    'send_reset_password_link' => "Envoyer",
+    'reset_pass_btn' => "Réinitialiser le mot de passe"
 ];
