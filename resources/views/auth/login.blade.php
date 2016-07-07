@@ -12,7 +12,7 @@
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('email') ? ' is-invalid' : '' }}">
                         <input id="email" type="email" class="mdl-textfield__input" name="email" value="{{ old('email') }}">
                         <label for="email" class="mdl-textfield__label">{!! trans('auth.email_form') !!}</label>
 
@@ -24,7 +24,7 @@
 
                     </div>
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' is-invalid' : '' }}">
                         <input id="password" type="password" class="mdl-textfield__input" name="password">
                         <label for="password" class="mdl-textfield__label">{!! trans('auth.password_form') !!}</label>
                         @if ($errors->has('password'))

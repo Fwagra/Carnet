@@ -12,7 +12,7 @@
                 <form class="" role="form" method="POST" action="{{ url('/register') }}">
                     {{ csrf_field() }}
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('name') ? ' has-error' : '' }}">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('name') ? ' is-invalid' : '' }}">
                         <input id="name" type="text" class="mdl-textfield__input" name="name" value="{{ old('name') }}">
                         <label for="name" class="mdl-textfield__label">{!! trans('auth.name_form') !!}</label>
                             @if ($errors->has('name'))
@@ -22,7 +22,7 @@
                             @endif
                     </div>
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('email') ? ' is-invalid' : '' }}">
                             <input id="email" type="email" class="mdl-textfield__input" name="email" value="{{ old('email') }}">
                             <label for="email" class="mdl-textfield__label">{!! trans('auth.email_form') !!}</label>
                             @if ($errors->has('email'))
@@ -32,7 +32,7 @@
                             @endif
                     </div>
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' is-invalid' : '' }}">
                         <input id="password" type="password" class="mdl-textfield__input" name="password">
                         <label for="password" class="mdl-textfield__label">{!! trans('auth.password_form') !!}</label>
 
@@ -43,7 +43,7 @@
                             @endif
                     </div>
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}">
                         <input id="password-confirm" type="password" class="mdl-textfield__input" name="password_confirmation">
                         <label for="password-confirm" class="mdl-textfield__label">{!! trans('auth.confirm_password_form') !!}</label>
                             @if ($errors->has('password_confirmation'))
