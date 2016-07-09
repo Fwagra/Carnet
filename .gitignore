@@ -3,7 +3,7 @@
 /public/storage
 /public/css
 /public/js
-/resources/assets/sass/modules/
+/resources/assets/sass/modules/*
 Homestead.yaml
 Homestead.json
 .env
