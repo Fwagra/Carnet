@@ -13,4 +13,7 @@
 
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'TripController@index');
+
+Route::resource('trip', 'TripController');
+Route::model('trip', 'App\Trip');
