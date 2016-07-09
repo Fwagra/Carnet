@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Trip;
 use App\Http\Requests;
+use View;
 
 class TripController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => "index"]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,8 @@ class TripController extends Controller
      */
     public function index()
     {
-        //
+        $trips = Trip::all();
+        return View::make('home')->with(compact('trips'));
     }
 
     /**
