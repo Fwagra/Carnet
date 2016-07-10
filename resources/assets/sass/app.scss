@@ -4,3 +4,23 @@
 .mdl-grid{
     max-width: 1200px;
 }
+.mdl-layout__header{
+    background-color: none;
+}
+.trip-list{
+    .mdl-card__media{
+        padding: 24px;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+}
