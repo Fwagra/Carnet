@@ -156,6 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         narutimateum\Toastr\ToastrServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -204,6 +205,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Toastr' => narutimateum\Toastr\Facades\Toastr::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

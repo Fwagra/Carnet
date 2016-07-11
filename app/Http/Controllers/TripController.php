@@ -36,7 +36,7 @@ class TripController extends Controller
      */
     public function create()
     {
-        //
+        return View::make('trips.create');
     }
 
     /**
