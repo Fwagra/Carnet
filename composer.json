@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "narutimateum/toastr-5.2-laravel": "dev-master"
+        "narutimateum/toastr-5.2-laravel": "dev-master",
+        "laravelcollective/html": "5.2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
