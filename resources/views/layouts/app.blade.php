@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="{{ env('APP_LANG', 'en')}}">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +8,6 @@
 </head>
 <body>
     <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header"></header>
         <div class="mdl-layout__content main_content">
             @yield('content')
         </div>

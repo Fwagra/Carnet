@@ -2,10 +2,13 @@
 @import "modules/toastr";
 
 .mdl-grid{
-    max-width: 1200px;
+    max-width: 1024px;
 }
 .mdl-layout__header{
     background-color: none;
+}
+.mdl-layout__container{
+    background: grey;
 }
 .trip-list{
     .mdl-card__media{
@@ -23,4 +26,27 @@
         -ms-flex-align: end;
         align-items: flex-end;
     }
+}
+
+.centered
+{
+    margin: 0 auto;
+}
+
+.mdl-card.large-card{
+    width: 512px;
+    .mdl-card__supporting-text{
+        width: auto;
+    }
+    .mdl-textfield{
+        width: 100%;
+    }
+}
+
+.mdl-card.wide-card{
+    width: 960px;
+}
+
+form{
+    margin: 0;
 }
