@@ -11,7 +11,7 @@ class Trip extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'image_id', 'finished', 'slug'];
+    protected $fillable = ['name', 'image_id', 'finished', 'slug', 'description'];
 
     /**
      * Get the route key for the model.
@@ -21,5 +21,14 @@ class Trip extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    /**
+     * Set the slug on saving the name
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = str_slug($value);
     }
 }

@@ -13,21 +13,18 @@
 .trip-list{
     .mdl-card__media{
         padding: 24px;
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
         flex-grow: 1;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
         flex-direction: row;
-        -webkit-align-items: flex-end;
-        -ms-flex-align: end;
         align-items: flex-end;
     }
 }
-
+.mdl-card__actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .centered
 {
     margin: 0 auto;
@@ -49,4 +46,8 @@
 
 form{
     margin: 0;
+}
+
+.section-spacer{
+    flex-grow: 1;
 }

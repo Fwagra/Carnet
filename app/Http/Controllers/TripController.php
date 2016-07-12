@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Trip;
 use App\Http\Requests;
+use Toastr;
 use View;
 
 class TripController extends Controller
@@ -16,7 +17,7 @@ class TripController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => "index"]);
+        $this->middleware('web', ['except' => "index"]);
     }
     /**
      * Display a listing of the resource.
@@ -26,7 +27,7 @@ class TripController extends Controller
     public function index()
     {
         $trips = Trip::all();
-        return View::make('home')->with(compact('trips'));
+        return View::make('home', compact('trips'));
     }
 
     /**
@@ -47,7 +48,14 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255|unique:trips',
+            'description' => 'max:1500',
+        ]);
+        $trip = Trip::create($request->all());
+
+        Toastr::success(trans('trip.creation_success_msg'), trans('trip.creation_success_title', ['trip' => $trip->name]), ['timeOut' => '10000']);
+        return redirect()->action('TripController@show', ['trip' => $trip->slug]);
     }
 
     /**
@@ -58,7 +66,7 @@ class TripController extends Controller
      */
     public function show($trip)
     {
-
+        return View::make('trips.show', compact('trip'));
     }
 
     /**
