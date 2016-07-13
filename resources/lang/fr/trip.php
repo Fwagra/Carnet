@@ -15,4 +15,6 @@ return [
     'submit_btn' => "C'est parti !",
     'creation_success_title' => "Le voyage :trip a été créé !",
     'creation_success_msg' => "Vous pouvez ajouter vos étapes au fur et à mesure de votre périple sur cette page !",
+    'edit_btn' => "Éditer",
+    'destroy_btn' => "Supprimer",
 ];
