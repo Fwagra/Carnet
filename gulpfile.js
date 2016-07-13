@@ -17,7 +17,7 @@ elixir(function(mix) {
     mix.copy('node_modules/toastr/toastr.scss','resources/assets/sass/modules/toastr.scss');
     mix.sass([
         'modules/material-design-lite/material-design-lite.scss',
-        'app.scss'
+        'resources/assets/sass/style.scss'
     ]);
 
     mix.scripts([

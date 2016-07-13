@@ -1,0 +1,31 @@
+.mdl-card{
+    min-height: 170px;
+    .menu-top-right{
+        position: absolute;
+        right: 1rem;
+        top: 10px;
+    }
+    .mdl-card__supporting-text{
+        width: auto;
+    }
+}
+.mdl-card.large-card{
+    width: 512px;
+    .mdl-card__supporting-text{
+        width: auto;
+    }
+    .mdl-textfield{
+        width: 100%;
+    }
+}
+
+.mdl-card.wide-card{
+    width: 960px;
+}
+
+.mdl-card__actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+// @import "modules/material.min.scss";
+@import "modules/toastr";
+@import "cards";
+@import "helpers";
+
+.mdl-grid{
+    max-width: 1024px;
+}
+.mdl-layout__header{
+    background-color: none;
+}
+.mdl-layout__container{
+    background: grey;
+}
+
+// HOMEPAGE
+.trip-list{
+    .mdl-card{
+        overflow: visible;
+    }
+    .mdl-card__media{
+        padding: 24px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        position: relative;
+    }
+}
