@@ -2,7 +2,7 @@
 @section('title', trans('trip.home_title'))
 @section('content')
 <div class="content-grid mdl-grid trip-list">
-    <?php $i = 1; ?>
+    <?php $i = 1; ?><?php $trips = array() ?>
     @forelse ($trips as $trip)
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__media mdl-color-text--grey-50">
@@ -36,12 +36,16 @@
         </div>
         <?php $i++; ?>
     @empty
-        <div class="mdl-card">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__title mdl-card--expand">
-              {!! trans('trip.no_trips_title') !!}
+              <h3>{!! trans('trip.bvn_text_title') !!}</h3>
+          </div>
+          <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+              {!! nl2br(trans('trip.bvn_text')) !!}
           </div>
           <div class="mdl-card__actions mdl-card--border">
-            <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              <div class="section-spacer"></div>
+            <a href="{{ action('TripController@create')}}" class="mdl-button mdl-button--colored mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect">
                 {!! trans('trip.add_new_trip_btn') !!}
             </a>
           </div>

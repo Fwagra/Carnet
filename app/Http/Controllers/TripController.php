@@ -17,7 +17,8 @@ class TripController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('web', ['except' => "index"]);
+        $this->middleware('web');
+        $this->middleware('auth', ['except' => "index"]);
     }
     /**
      * Display a listing of the resource.
