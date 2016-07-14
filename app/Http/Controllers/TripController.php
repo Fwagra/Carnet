@@ -108,6 +108,8 @@ class TripController extends Controller
      */
     public function destroy($trip)
     {
-        //
+        $trip->delete();
+        Toastr::success(trans('trip.delete_success_msg'));
+        return redirect()->action('TripController@index');
     }
 }

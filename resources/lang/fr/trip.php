@@ -24,5 +24,13 @@ return [
     Nous vous souhaitons un bon voyage et une agréable expérience sur votre carnet de voyage!",
     'add_new_trip_btn' => "Ajouter un premier voyage !",
     'edit_title' => "Informations du voyage",
-    'update_success_msg' => "Voyage modifié !"
+    'update_success_msg' => "Voyage modifié !",
+    'deletion_confirmation' => "Suppression du voyage",
+    'delete_label_form' => "Écrire SUPPRIMER ici",
+    'delete_label_form' => "Écrire SUPPRIMER ici",
+    'delete_btn' => "Supprimer",
+    'cancel_btn' => "Annuler",
+    'delete_msg' => "Vous vous apprêtez à supprimer un voyage. Cette action est irréversible. Vous perdrez par conséquent toutes étapes liées à ce voyage. Pour continuer et supprimer le voyage, écrivez 'SUPPRIMER' dans le champ ci-dessous.",
+    'keyword_delete' => "SUPPRIMER",
+    'delete_success_msg' => "Le voyage a bien été supprimé.",
 ];
