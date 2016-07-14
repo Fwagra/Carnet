@@ -78,7 +78,7 @@ class TripController extends Controller
      */
     public function edit($trip)
     {
-        //
+        return View::make('trips.edit', compact('trip'));
     }
 
     /**
@@ -90,7 +90,14 @@ class TripController extends Controller
      */
     public function update(Request $request, $trip)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255|unique:trips,name,'.$trip->id,
+            'description' => 'max:1500',
+        ]);
+        $trip->update($request->all());
+
+        Toastr::success(trans('trip.update_success_msg'));
+        return redirect()->action('TripController@show', ['trip' => $trip->slug]);
     }
 
     /**

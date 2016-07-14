@@ -2,7 +2,7 @@
 @section('title', trans('trip.home_title'))
 @section('content')
 <div class="content-grid mdl-grid trip-list">
-    <?php $i = 1; ?><?php $trips = array() ?>
+    <?php $i = 1; ?>
     @forelse ($trips as $trip)
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__media mdl-color-text--grey-50">
