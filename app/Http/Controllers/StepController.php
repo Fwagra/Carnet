@@ -42,10 +42,11 @@ class StepController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  App\Trip $trip
+     * @param  App\Step $step
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($trip, $step)
     {
         //
     }
@@ -53,10 +54,11 @@ class StepController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  App\Trip $trip
+     * @param  App\Step $step
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($trip, $step)
     {
         //
     }
@@ -65,10 +67,11 @@ class StepController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  App\Trip $trip
+     * @param  App\Step $step
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $trip, $step)
     {
         //
     }
@@ -76,10 +79,11 @@ class StepController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  App\Trip $trip
+     * @param  App\Step $step
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($trip, $step)
     {
         //
     }

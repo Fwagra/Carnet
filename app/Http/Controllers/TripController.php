@@ -67,7 +67,8 @@ class TripController extends Controller
      */
     public function show($trip)
     {
-        return View::make('trips.show', compact('trip'));
+        $steps = [];
+        return View::make('trips.show', compact('trip', 'steps'));
     }
 
     /**

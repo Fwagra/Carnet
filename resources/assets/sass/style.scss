@@ -21,6 +21,9 @@
 .mdl-layout__drawer{
    transform:translateX(250px);
 }
+.main_content{
+    padding-top: 3em;
+}
 // HOMEPAGE
 .trip-list,
 .steps-list{
@@ -38,4 +41,13 @@
     h2 a {
         color: #FFF;
     }
+}
+
+// Steps list
+.add-step{
+    position: absolute;
+    right: 1em;
+}
+.trip-head{
+    margin-bottom: 2rem;
 }
