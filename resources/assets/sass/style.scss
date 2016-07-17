@@ -22,7 +22,8 @@
    transform:translateX(250px);
 }
 // HOMEPAGE
-.trip-list{
+.trip-list,
+.steps-list{
     .mdl-card{
         overflow: visible;
     }
@@ -33,5 +34,8 @@
         flex-direction: row;
         align-items: flex-end;
         position: relative;
+    }
+    h2 a {
+        color: #FFF;
     }
 }

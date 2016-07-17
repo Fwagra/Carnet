@@ -9,7 +9,7 @@
               @if ($trip->finished)
                   {!! trans('trip.finished_msg') !!}
               @endif
-            <h2 class="mdl-card__title-text">{{ $trip->name }}</h2>
+            <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">{{ $trip->name }}</a></h2>
             @if (Auth::check())
                 <button id="menu-{{$i}}" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
                   <i class="material-icons">more_vert</i>
