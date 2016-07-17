@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout mdl-js-layout has-drawer">
+        <div class="mdl-layout__drawer">
+            @include('layouts.menu')
+        </div>
         <div class="mdl-layout__content main_content">
             @yield('content')
         </div>

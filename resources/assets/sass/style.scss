@@ -13,7 +13,14 @@
 .mdl-layout__container{
     background: grey;
 }
+.mdl-layout__drawer-button, .mdl-layout__drawer{
+   left: initial;
+   right: 0;
+}
 
+.mdl-layout__drawer{
+   transform:translateX(250px);
+}
 // HOMEPAGE
 .trip-list{
     .mdl-card{
