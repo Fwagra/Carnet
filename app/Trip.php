@@ -31,4 +31,12 @@ class Trip extends Model
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = str_slug($value);
     }
+
+    /**
+     * Get the steps associated to a trip.
+     */
+    public function steps()
+    {
+        return $this->hasMany('App\Step');
+    }
 }

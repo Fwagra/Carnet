@@ -16,4 +16,6 @@ Route::auth();
 Route::get('/', 'TripController@index');
 
 Route::resource('trip', 'TripController');
+Route::resource('trip.step', 'StepController');
 Route::model('trip', 'App\Trip');
+Route::model('step', 'App\Step');
