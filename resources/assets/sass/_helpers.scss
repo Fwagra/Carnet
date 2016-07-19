@@ -27,3 +27,7 @@ h5 a{
 .menu-top-right{
     color: #FFF;
 }
+
+.mdl-icon-toggle .mdl-icon-toggle__input:checked + i{
+    color: green !important;
+}

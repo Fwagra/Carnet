@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use View;
 use App\Http\Requests;
 
 class StepController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -21,22 +23,24 @@ class StepController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param  App\Trip $trip
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($trip)
     {
-        //
+        return View::make('steps.create', compact('trip'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  App\Trip $trip
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $trip)
     {
-        //
+        dd($request);
     }
 
     /**
