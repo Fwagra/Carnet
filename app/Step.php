@@ -13,4 +13,10 @@ class Step extends Model
     {
         return $this->belongsTo('App\Trip');
     }
+    /**
+    * The attributes that should be mutated to dates.
+    *
+    * @var array
+    */
+   protected $dates = ['date'];
 }
