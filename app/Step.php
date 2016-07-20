@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
 {
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'trip_id', 'active', 'md_value', 'km', 'type', 'date', 'html_value'];
+
     /**
      * Get the trip that owns the step.
      */

@@ -23,4 +23,5 @@ return [
     'walk_option' => "Marche",
     'hitchhike_option' => "Auto-stop / Auto",
     'other_option' => "Autre",
+    'submit_btn' => "Sauvegarder l'étape",
 ];

@@ -140,6 +140,8 @@ return [
         'time'                  => 'Heure',
         'available'             => 'Disponible',
         'size'                  => 'Taille',
+        'type'                  => 'Moyen de transport',
+        'km'                    => 'Kilomètres parcourus',
     ],
 
 ];

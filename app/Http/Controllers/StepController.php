@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use View;
+use Markdown;
+use Toastr;
+use App\Step;
+use App\Trip;
 use App\Http\Requests;
 
 class StepController extends Controller
@@ -50,7 +54,22 @@ class StepController extends Controller
      */
     public function store(Request $request, $trip)
     {
-        dd($request);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'md_value' => 'required',
+            'km' => 'numeric',
+            'date' => 'required|date',
+            'type' => 'required',
+        ]);
+
+        $step = Step::create($request->all());
+        $step->active = ($request->get('active')) ? '1' : '0';
+        $step->html_value = Markdown::string($step->md_value);
+        $step->trip_id = $trip->id;
+        $step->save();
+
+        Toastr::success(trans('step.create_success_msg'));
+        return redirect()->action('TripController@show', ['trip' => $trip->slug]);
     }
 
     /**

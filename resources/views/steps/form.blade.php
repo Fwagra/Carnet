@@ -18,7 +18,8 @@
         @endif
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('date') ? ' is-invalid' : '' }}">
-        {!! Form::date('date',null , ['class' => 'mdl-textfield__input']) !!}
+
+        {!! Form::date('date',\Carbon\Carbon::now()->toDateString() , ['class' => 'mdl-textfield__input']) !!}
         {!! Form::label('date', trans('step.date_form'), ['class' => "mdl-textfield__label"])!!}
         @if ($errors->has('date'))
             <span class="mdl-textfield__error">
@@ -60,6 +61,12 @@
             </span>
         @endif
     </div>
+
+    <label for="activate" class="mdl-switch mdl-js-switch">
+        <input type="checkbox" id="activate" name="active" value="1" checked class="mdl-switch__input">
+        <span class="mdl-switch__label">{!! trans('step.active_form') !!}</span>
+    </label>
+
 </div>
 <div class="mdl-card__actions mdl-card--border">
     <div class="section-spacer"></div>
