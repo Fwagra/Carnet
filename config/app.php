@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         narutimateum\Toastr\ToastrServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        VTalbot\Markdown\MarkdownServiceProvider::class,
     ],
 
     /*
@@ -207,6 +207,7 @@ return [
         'Toastr' => narutimateum\Toastr\Facades\Toastr::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Markdown' => VTalbot\Markdown\Facades\Markdown::class,
     ],
 
 ];
