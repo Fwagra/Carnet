@@ -138,6 +138,8 @@ class StepController extends Controller
      */
     public function destroy($trip, $step)
     {
-        //
+        $step->delete();
+        Toastr::success(trans('step.delete_success_msg'));
+        return redirect()->action('TripController@show', $trip->slug);
     }
 }

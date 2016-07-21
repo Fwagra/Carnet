@@ -28,4 +28,5 @@ return [
     'active_form' => "Publier",
     'create_success_msg' => "L'étape a bien été créée",
     'update_success_msg' => "L'étape a bien été modifiée",
+    'delete_success_msg' => "L'étape a  été supprimée :(",
 ];
