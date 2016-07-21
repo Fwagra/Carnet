@@ -62,8 +62,13 @@ class StepController extends Controller
             'type' => 'required',
         ]);
 
+        if(!empty($request->get('final_step'))){
+            $this->resetOtherFinalSteps();
+        }
+
         $step = Step::create($request->all());
         $step->active = (!empty($request->get('active'))) ? '1' : '0';
+        $step->final_step = (!empty($request->get('final_step'))) ? '1' : '0';
         $step->html_value = Markdown::string($step->md_value);
         $step->trip_id = $trip->id;
         $step->save();
@@ -114,12 +119,13 @@ class StepController extends Controller
             'type' => 'required',
         ]);
 
-        // dd($request);
         $active = (!empty($request->get('active'))) ? '1' : '0';
+        $final_step = (!empty($request->get('final_step'))) ? '1' : '0';
         $html_value = Markdown::string($request->get('md_value'));
 
         $request->merge([
             'active' => $active,
+            'final_step' => $final_step,
             'html_value' => $html_value,
         ]);
 
@@ -141,5 +147,19 @@ class StepController extends Controller
         $step->delete();
         Toastr::success(trans('step.delete_success_msg'));
         return redirect()->action('TripController@show', $trip->slug);
+    }
+
+    /**
+     * Reset all the already existing final steps
+     */
+    public function resetOtherFinalSteps()
+    {
+        $steps = Step::Final()->get();
+        if(count($steps)){
+            foreach ($steps as $key => $step) {
+                $step->final_step = 0;
+                $step->save();
+            }
+        }
     }
 }

@@ -67,10 +67,17 @@
     </div>
 
     <label for="activate" class="mdl-switch mdl-js-switch">
-        <input type="checkbox" id="activate" name="active" value="1" @if (isset($step) && $step->active == 1)
+        <input type="checkbox" id="activate" name="active" value="1" @if (!isset($step) || $step->active == 1)
             checked
         @endif class="mdl-switch__input">
         <span class="mdl-switch__label">{!! trans('step.active_form') !!}</span>
+    </label>
+
+    <label for="final_step" class="mdl-switch mdl-js-switch">
+        <input type="checkbox" id="final_step" name="final_step" value="1" @if (isset($step) && $step->final_step == 1)
+            checked
+        @endif class="mdl-switch__input">
+        <span class="mdl-switch__label">{!! trans('step.final_step_form') !!}</span>
     </label>
 
 </div>

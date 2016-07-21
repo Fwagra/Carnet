@@ -26,6 +26,7 @@ return [
     'other_option' => "Autre",
     'submit_btn' => "Sauvegarder l'étape",
     'active_form' => "Publier",
+    'final_step_form' => "Étape finale?",
     'create_success_msg' => "L'étape a bien été créée",
     'update_success_msg' => "L'étape a bien été modifiée",
     'delete_success_msg' => "L'étape a  été supprimée :(",

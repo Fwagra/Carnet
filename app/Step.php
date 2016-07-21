@@ -12,7 +12,14 @@ class Step extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'trip_id', 'active', 'md_value', 'km', 'type', 'date', 'html_value'];
+    protected $fillable = ['name', 'trip_id', 'active', 'md_value', 'km', 'type', 'date', 'html_value', 'final_step'];
+
+    /**
+    * The attributes that should be mutated to dates.
+    *
+    * @var array
+    */
+    protected $dates = ['date'];
 
     /**
      * Get the trip that owns the step.
@@ -21,10 +28,14 @@ class Step extends Model
     {
         return $this->belongsTo('App\Trip');
     }
+
     /**
-    * The attributes that should be mutated to dates.
-    *
-    * @var array
-    */
-   protected $dates = ['date'];
+     * Scope a query to only include final steps.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFinal($query)
+    {
+        return $query->where('final_step', '=', 1);
+    }
 }

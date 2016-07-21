@@ -142,6 +142,7 @@ return [
         'size'                  => 'Taille',
         'type'                  => 'Moyen de transport',
         'km'                    => 'Kilomètres parcourus',
+        'md_value'                    => 'Description',
     ],
 
 ];
