@@ -63,7 +63,7 @@ class StepController extends Controller
         ]);
 
         $step = Step::create($request->all());
-        $step->active = ($request->get('active')) ? '1' : '0';
+        $step->active = (!empty($request->get('active'))) ? '1' : '0';
         $step->html_value = Markdown::string($step->md_value);
         $step->trip_id = $trip->id;
         $step->save();
@@ -81,7 +81,7 @@ class StepController extends Controller
      */
     public function show($trip, $step)
     {
-        //
+
     }
 
     /**
@@ -93,7 +93,7 @@ class StepController extends Controller
      */
     public function edit($trip, $step)
     {
-        //
+        return View::make('steps.edit', compact('trip', 'step'));
     }
 
     /**
@@ -106,7 +106,27 @@ class StepController extends Controller
      */
     public function update(Request $request, $trip, $step)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'md_value' => 'required',
+            'km' => 'numeric',
+            'date' => 'required|date',
+            'type' => 'required',
+        ]);
+
+        // dd($request);
+        $active = (!empty($request->get('active'))) ? '1' : '0';
+        $html_value = Markdown::string($request->get('md_value'));
+
+        $request->merge([
+            'active' => $active,
+            'html_value' => $html_value,
+        ]);
+
+        $step->update($request->all());
+
+        Toastr::success(trans('step.update_success_msg'));
+        return redirect()->action('TripController@show', ['trip' => $trip->slug]);
     }
 
     /**

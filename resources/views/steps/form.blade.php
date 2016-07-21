@@ -39,7 +39,11 @@
         <div class="fake-label">{!! trans('step.type_form') !!}</div>
         @foreach ($types as $key => $type)
             <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" id="icon-{{$key}}" for="type-{{$key}}">
-              <input type="radio"  id="type-{{$key}}" name="type" class="mdl-icon-toggle__input" value="{{ $key }}">
+              <input type="radio"  id="type-{{$key}}" name="type"
+              @if (isset($step) && $step->type == $key)
+                  checked
+              @endif
+               class="mdl-icon-toggle__input" value="{{ $key }}">
               <i class="mdl-icon-toggle__label material-icons" >{{ $key }}</i>
             </label>
             <div class="mdl-tooltip" for="icon-{{$key}}">
@@ -63,7 +67,9 @@
     </div>
 
     <label for="activate" class="mdl-switch mdl-js-switch">
-        <input type="checkbox" id="activate" name="active" value="1" checked class="mdl-switch__input">
+        <input type="checkbox" id="activate" name="active" value="1" @if (isset($step) && $step->active == 1)
+            checked
+        @endif class="mdl-switch__input">
         <span class="mdl-switch__label">{!! trans('step.active_form') !!}</span>
     </label>
 

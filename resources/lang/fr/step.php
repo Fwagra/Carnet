@@ -14,6 +14,7 @@ return [
     Pour commencer, cliquez sur le gros bouton '+' ou sur le bouton ci-dessous au nom assez subtilement évocateur pour que vous ayez déjà cliqué dessus sans prendre la peine de lire ce texte.",
     'add_new_step_btn' => "Ajouter une première étape !",
     'create_title' => "Nouvelle étape",
+    'edit_title' => "Modifier l'étape",
     'name_form' => "Nom de l'étape",
     'km_form' => "Kilomètres parcourus",
     'date_form' => "Date de l'étape",
@@ -24,4 +25,7 @@ return [
     'hitchhike_option' => "Auto-stop / Auto",
     'other_option' => "Autre",
     'submit_btn' => "Sauvegarder l'étape",
+    'active_form' => "Publier",
+    'create_success_msg' => "L'étape a bien été créée",
+    'update_success_msg' => "L'étape a bien été modifiée",
 ];

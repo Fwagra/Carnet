@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', trans('trip.show_title'))
+@section('title', $trip->name)
 @section('content')
 <div class="content-grid mdl-grid steps-list">
     <div class="mdl-card mdl-cell mdl-cell--12-col trip-head">
@@ -34,7 +34,7 @@
     </div>
 
     @forelse ($steps as $element)
-
+        
     @empty
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__title mdl-card--expand">
