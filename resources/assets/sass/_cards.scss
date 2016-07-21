@@ -29,3 +29,8 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.mdl-card.no-height-card{
+    min-height: 0;
+    height: auto;
+}

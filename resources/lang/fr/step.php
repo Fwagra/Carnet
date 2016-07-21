@@ -12,6 +12,7 @@ return [
     'no_step_text_title' => 'Ajoutez vos étapes!',
     'no_step_text' => "Vous venez de créer un voyage, bravo! Pensez maitenant à ajouter les étapes qui le composent. Vous pouvez en créer une par jour de voyage, par lieu visité, ou de toute autre façon que vous avez de segmenter votre périple.
     Pour commencer, cliquez sur le gros bouton '+' ou sur le bouton ci-dessous au nom assez subtilement évocateur pour que vous ayez déjà cliqué dessus sans prendre la peine de lire ce texte.",
+    'no_step_text_not_logged' => "Ah vous êtes déjà là? Aucune étape n'a encore été créée, il semble un peu tôt pour venir visiter ce voyage, non?",
     'add_new_step_btn' => "Ajouter une première étape !",
     'create_title' => "Nouvelle étape",
     'edit_title' => "Modifier l'étape",
