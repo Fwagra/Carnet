@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Observers\StepObserver;
 
 class Step extends Model
 {
@@ -37,5 +38,11 @@ class Step extends Model
     public function scopeFinal($query)
     {
         return $query->where('final_step', '=', 1);
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        Step::observe(new StepObserver());
     }
 }
