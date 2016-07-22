@@ -1,8 +1,8 @@
 <dialog class="mdl-dialog delete-dialog">
-  <h4 class="mdl-dialog__title">{!! trans('trip.deletion_confirmation') !!}</h4>
+  <h4 class="mdl-dialog__title"></h4>
   <div class="mdl-dialog__content">
-      <p>
-          {!! trans('trip.delete_msg') !!}
+      <p class="popup-message">
+
       </p>
       <div class="mdl-textfield mdl-js-textfield">
           {!! Form::text('delete_input',null, ['class' => 'mdl-textfield__input delete-input', 'data-keyword' => trans('trip.keyword_delete')]) !!}
@@ -14,3 +14,15 @@
     <button type="button" class="mdl-button close">{!! trans('trip.cancel_btn') !!}</button>
   </div>
 </dialog>
+<script type="text/javascript">
+    popup_texts = {
+        trip:{
+            title:"{!! trans('trip.deletion_confirmation') !!}",
+            msg:"{!! trans('trip.delete_msg') !!}"
+        },
+        step:{
+            title:"{!! trans('step.deletion_confirmation') !!}",
+            msg:"{!! trans('step.delete_msg') !!}"
+        }
+    };
+</script>

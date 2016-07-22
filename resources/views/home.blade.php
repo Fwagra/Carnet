@@ -18,7 +18,7 @@
                   <li class="mdl-menu__item goto">
                       <a class="goto-link" href="{{ action('TripController@edit', $trip->slug) }}">{!! trans('trip.edit_btn') !!}</a>
                   </li>
-                  <li class="mdl-menu__item delete_resource" data-delete="{{$i}}">
+                  <li class="mdl-menu__item delete_resource" data-type="trip" data-delete="{{$i}}">
                       <a href="{{ action('TripController@destroy', $trip->slug)}}">
                           {!! trans('trip.destroy_btn') !!}
                       </a>

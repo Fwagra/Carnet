@@ -15,11 +15,15 @@ dialog.querySelector('.close').addEventListener('click', function() {
 jQuery('.delete_resource').on('click', function(event) {
     event.preventDefault();
     var id = jQuery(this).data('delete');
+    var type = jQuery(this).data('type');
     formDelete = jQuery('.form-delete-'+id);
     //Reset modal
     jQuery('.delete-input', dialog).val("");
     deleteBtn.attr('disabled', 'disabled');
 
+    // Set the popup texts
+    dialog.querySelector('.mdl-dialog__title').innerHTML = popup_texts[type].title;
+    dialog.querySelector('.popup-message').innerHTML = popup_texts[type].msg;
     dialog.showModal();
 });
 
