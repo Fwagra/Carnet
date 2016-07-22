@@ -32,10 +32,16 @@
           <i class="material-icons">add</i>
       </button>
     </div>
-
+    <?php $i = 0; ?>
     @forelse ($steps as $key => $element)
+        <?php
+            $first = ($i == 0)? 'first' : '';
+            $last = ($i == count($steps) - 1)? 'last' : '';
+            $final = ($element->final_step)? 'final' : '';
+         ?>
         <div class="mdl-card mdl-grid mdl-cell mdl-cell--12-col step-wrapper">
-          <div class="mdl-cell mdl-cell--2-col mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet mdl-grid--no-spacing {{$first}} {{$last}} {{$final}} step-icon">
+                <div class="pulse"></div>
           </div>
           <div class="mdl-cell mdl-cell--10-col mdl-grid--no-spacing">
               <div class="mdl-card__title">
@@ -68,6 +74,7 @@
               {{ Form::close() }}
           </div>
         </div>
+        <?php $i++ ?>
     @empty
         @if (Auth::check())
             <div class="mdl-card mdl-cell mdl-cell--12-col">
