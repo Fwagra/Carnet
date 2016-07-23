@@ -39,4 +39,5 @@ class Trip extends Model
     {
         return $this->hasMany('App\Step');
     }
+
 }

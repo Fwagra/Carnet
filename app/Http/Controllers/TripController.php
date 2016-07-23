@@ -67,8 +67,51 @@ class TripController extends Controller
      */
     public function show($trip)
     {
+        $steps = $trip->steps()->orderBy('date', 'desc')->orderBy('id', 'desc')->get();
+        $dates = $this->tripDates($trip);
+        $km = $this->tripKms($trip);
+        return View::make('trips.show', compact('trip', 'steps', 'dates', 'km'));
+    }
+
+    /**
+     * Return dates informations of a trip
+     *
+     * @param App\Trip $trip
+     * @return string $dates
+     */
+    public function tripDates($trip)
+    {
+        $first_step = $trip->steps()->firstStep()->first();
+        $last_step = $trip->steps()->lastStep()->first();
+        $dates = '';
+        // dd($first_step);
+        if(!count($first_step) && !count($last_step)){
+            $dates = trans('trip.not_begun');
+        }
+        if(!$trip->finished && count($first_step)){
+            $dates = $first_step->date->format('d-m-Y') . ' - ' . trans('trip.date_not_finished');
+        }
+        if($trip->finished && count($last_step)){
+            $dates = $first_step->date->format('d-m-Y') . ' - ' . $last_step->date->format('d-m-Y');
+        }
+
+        return $dates;
+    }
+
+    /**
+     * Return the total kms of a trip
+     *
+     * @param App\Trip $trip
+     * @return string $dates
+     */
+    public function tripKms($trip)
+    {
         $steps = $trip->steps;
-        return View::make('trips.show', compact('trip', 'steps'));
+        $total = 0;
+        foreach ($steps as $key => $step) {
+            $total += $step->km;
+        }
+        return $total;
     }
 
     /**

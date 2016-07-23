@@ -40,6 +40,23 @@ class Step extends Model
         return $query->where('final_step', '=', 1);
     }
 
+    /**
+     * Retrieve the first step of a query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFirstStep($query)
+    {
+        return $query->orderBy('date', 'asc')->orderBy('id', 'asc');
+    }
+    /**
+     * Retrieve the last step of a query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeLastStep($query)
+    {
+        return $query->orderBy('date', 'desc')->orderBy('id', 'desc');
+    }
+
     public static function boot() {
         parent::boot();
 

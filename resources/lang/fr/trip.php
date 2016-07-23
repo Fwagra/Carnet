@@ -33,4 +33,6 @@ return [
     'delete_msg' => "Vous vous apprêtez à supprimer un voyage. Cette action est irréversible. Vous perdrez par conséquent toutes étapes liées à ce voyage. Pour continuer et supprimer le voyage, écrivez 'SUPPRIMER' dans le champ ci-dessous.",
     'keyword_delete' => "SUPPRIMER",
     'delete_success_msg' => "Le voyage a bien été supprimé.",
+    'date_not_finished' => "En cours",
+    'not_begun' => "Pas encore commencé",
 ];

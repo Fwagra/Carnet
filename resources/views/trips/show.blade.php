@@ -11,9 +11,11 @@
       </div>
       <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
           <div class="mdl-grid">
-            
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
+                <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $dates }}</span>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                <i class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $km }} {!! trans('step.km_traveled') !!}</span>
             </div>
           </div>
       </div>
