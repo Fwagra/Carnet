@@ -1,15 +1,17 @@
 var dialog = document.querySelector('dialog.delete-dialog');
 var deleteBtn = jQuery('.delete-btn', dialog);
 
-// Fallback for old browsers with polyfill
-if (! dialog.showModal) {
-    dialogPolyfill.registerDialog(dialog);
-}
+if(dialog  != null){
+    // Fallback for old browsers with polyfill
+    if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+    }
 
-// Bind close button
-dialog.querySelector('.close').addEventListener('click', function() {
-    dialog.close();
-});
+    // Bind close button
+    dialog.querySelector('.close').addEventListener('click', function() {
+        dialog.close();
+    });
+}
 
 // Show the modal
 jQuery('.delete_resource').on('click', function(event) {
