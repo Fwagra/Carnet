@@ -9,11 +9,11 @@ class Step extends Model
 {
 
     /**
-     * The attributes that are mass assignable.
+     * The attributes that are not mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'trip_id', 'active', 'md_value', 'km', 'type', 'date', 'html_value', 'final_step'];
+    protected $guarded = ['id'];
 
     /**
     * The attributes that should be mutated to dates.

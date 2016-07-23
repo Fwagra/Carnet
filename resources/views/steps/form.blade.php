@@ -65,6 +65,21 @@
             </span>
         @endif
     </div>
+    <div class="pois-block multi-elements">
+        @if (isset($pois))
+            @foreach ($pois as $poi)
+                @include('steps.pois')
+            @endforeach
+        @else
+            @include('steps.pois')
+        @endif
+        <div class="mdl-card__actions">
+            <div class="section-spacer"></div>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab add-new-element">
+              <i class="material-icons">add</i>
+            </button>
+        </div>
+    </div>
 
     <label for="activate" class="mdl-switch mdl-js-switch">
         <input type="checkbox" id="activate" name="active" value="1" @if (!isset($step) || $step->active == 1)
