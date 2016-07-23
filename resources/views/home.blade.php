@@ -11,19 +11,21 @@
               @endif
             <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">{{ $trip->name }}</a></h2>
             @if (Auth::check())
-                <button id="menu-{{$i}}" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
-                  <i class="material-icons">more_vert</i>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-{{$i}}">
-                  <li class="mdl-menu__item goto">
-                      <a class="goto-link" href="{{ action('TripController@edit', $trip->slug) }}">{!! trans('trip.edit_btn') !!}</a>
-                  </li>
-                  <li class="mdl-menu__item delete_resource" data-type="trip" data-delete="{{$i}}">
-                      <a href="{{ action('TripController@destroy', $trip->slug)}}">
-                          {!! trans('trip.destroy_btn') !!}
-                      </a>
-                  </li>
-                </ul>
+                <div class="mdl-card__menu">
+                    <button id="menu-{{$i}}" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
+                      <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-{{$i}}">
+                      <li class="mdl-menu__item goto">
+                          <a class="goto-link" href="{{ action('TripController@edit', $trip->slug) }}">{!! trans('trip.edit_btn') !!}</a>
+                      </li>
+                      <li class="mdl-menu__item delete_resource" data-type="trip" data-delete="{{$i}}">
+                          <a href="{{ action('TripController@destroy', $trip->slug)}}">
+                              {!! trans('trip.destroy_btn') !!}
+                          </a>
+                      </li>
+                    </ul>
+                </div>
             @endif
           </div>
           <div class="mdl-color-text--grey-600 mdl-card__supporting-text">

@@ -93,7 +93,7 @@ class StepController extends Controller
      */
     public function show($trip, $step)
     {
-
+        dd($step);
     }
 
     /**
@@ -129,7 +129,7 @@ class StepController extends Controller
         if(!empty($request->get('final_step'))){
             $this->resetOtherFinalSteps($trip);
         }
-        
+
         $active = (!empty($request->get('active'))) ? '1' : '0';
         $final_step = (!empty($request->get('final_step'))) ? '1' : '0';
         $html_value = Markdown::string($request->get('md_value'));

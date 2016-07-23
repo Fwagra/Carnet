@@ -58,6 +58,12 @@
 }
 
 .steps-list {
+    .mdl-card__title .material-icons{
+        color: #FFF;
+        position: relative;
+        top: 3px;
+        margin-right: .5rem;
+    }
     .step-icon{
         margin: 0;
         background: #C5E1A5;
@@ -75,7 +81,7 @@
             content:'';
             height:3rem;
             width:3rem;
-            background: #FFA726;
+            background: #FFB74D;
             box-shadow:inset 0 0 0 .4rem #FFCC80;
             border-radius: 50%;
             left:calc( 50% - 1.5rem);
@@ -85,6 +91,9 @@
     .first:before{
         height: 50%;
         bottom: 0;
+    }
+    .first:after{
+        background: #FFA726;
     }
     .last:before{
         height: 50%;
@@ -110,9 +119,10 @@
         left:calc( 50% - 1.5rem);
         top:calc( 50% - 1.5rem);
         box-shadow:inset 0 0 0 1rem #FFCC80;
-        animation-name:pulse;
+        animation-name:pulse-icon;
         animation-duration: 2s;
         animation-iteration-count: infinite;
+        background: none;
     }
     .final .pulse{
         display: none;

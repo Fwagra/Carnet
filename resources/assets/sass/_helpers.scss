@@ -31,3 +31,11 @@ h5 a{
 .mdl-icon-toggle .mdl-icon-toggle__input:checked + i{
     color: green !important;
 }
+
+.material-icons.icon-align{
+    margin-right: .5rem;
+}
+.icon-align{
+    display: inline-block;
+    vertical-align: middle;
+}

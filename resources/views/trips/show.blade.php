@@ -8,22 +8,29 @@
               {!! trans('trip.finished_msg') !!}
           @endif
         <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">{{ $trip->name }}</a></h2>
-        <button id="menu-1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
-          <i class="material-icons">more_vert</i>
-        </button>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-1">
-          <li class="mdl-menu__item goto">
-              <a class="goto-link" href="{{ action('TripController@edit', $trip->slug) }}">{!! trans('trip.edit_btn') !!}</a>
-          </li>
-          <li class="mdl-menu__item delete_resource" data-type="trip" data-delete="1">
-              <a href="{{ action('TripController@destroy', $trip->slug)}}">
-                  {!! trans('trip.destroy_btn') !!}
-              </a>
-          </li>
-        </ul>
       </div>
       <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-          {{--  TODO: Stats --}}
+          <div class="mdl-grid">
+            
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
+            </div>
+          </div>
+      </div>
+      <div class="mdl-card__menu">
+          <button id="menu-1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-1">
+            <li class="mdl-menu__item goto">
+                <a class="goto-link" href="{{ action('TripController@edit', $trip->slug) }}">{!! trans('trip.edit_btn') !!}</a>
+            </li>
+            <li class="mdl-menu__item delete_resource" data-type="trip" data-delete="1">
+                <a href="{{ action('TripController@destroy', $trip->slug)}}">
+                    {!! trans('trip.destroy_btn') !!}
+                </a>
+            </li>
+          </ul>
       </div>
       {{ Form::open(['url' => action('TripController@destroy', $trip->slug), 'method' => 'DELETE', 'class' => "delete-validation form-delete-1"]) }}
       {{ Form::close() }}
@@ -33,27 +40,29 @@
       </button>
     </div>
     <?php $i = 0; ?>
-    @forelse ($steps as $key => $element)
+    @forelse ($steps as $key => $step)
         <?php
             $first = ($i == 0)? 'first' : '';
             $last = ($i == count($steps) - 1)? 'last' : '';
-            $final = ($element->final_step)? 'final' : '';
+            $final = ($step->final_step)? 'final' : '';
          ?>
-        <div class="mdl-card mdl-grid mdl-cell mdl-cell--12-col step-wrapper">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet mdl-grid--no-spacing {{$first}} {{$last}} {{$final}} step-icon">
+        <div class="mdl-card mdl-grid mdl-cell mdl-cell--12-col mdl-grid--no-spacing step-wrapper">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet {{$first}} {{$last}} {{$final}} step-icon">
                 <div class="pulse"></div>
-          </div>
-          <div class="mdl-cell mdl-cell--10-col mdl-grid--no-spacing">
-              <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">{{ $element->name }}</h2>
+            </div>
+            <div class="mdl-cell mdl-cell--10-col">
+              <div class="mdl-card__title mdl-card__media">
+                <h2 class="mdl-card__title-text"><a href="{{ route('trip.step.show', [$trip->slug, $step->id])}}"><i class="mdl-icon-toggle__label material-icons">{{$step->type}}</i>{{ $step->name }}</a></h2>
               </div>
               <div class="mdl-card__supporting-text">
-
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-
-                </a>
+                  <div class="mdl-grid">
+                      <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                          <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
+                      </div>
+                      <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                          <i class="material-icons icon-align">flag</i><span class="km icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
+                      </div>
+                  </div>
               </div>
               <div class="mdl-card__menu">
                   <button id="delete-{{$key}}" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
@@ -61,16 +70,16 @@
                 </button>
                   <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="delete-{{$key}}">
                     <li class="mdl-menu__item goto">
-                        <a class="goto-link" href="{{ action('StepController@edit', [$trip->slug, $element->id]) }}">{!! trans('trip.edit_btn') !!}</a>
+                        <a class="goto-link" href="{{ action('StepController@edit', [$trip->slug, $step->id]) }}">{!! trans('trip.edit_btn') !!}</a>
                     </li>
                     <li class="mdl-menu__item delete_resource" data-type="step" data-delete="step-{{ $key }}">
-                        <a href="{{ action('StepController@destroy', [$trip->slug, $element->id])}}">
+                        <a href="{{ action('StepController@destroy', [$trip->slug, $step->id])}}">
                             {!! trans('trip.destroy_btn') !!}
                         </a>
                     </li>
                   </ul>
               </div>
-              {{ Form::open(['url' => action('StepController@destroy', [$trip->slug, $element->id]), 'method' => 'DELETE', 'class' => "delete-validation form-delete-step-".$key]) }}
+              {{ Form::open(['url' => action('StepController@destroy', [$trip->slug, $step->id]), 'method' => 'DELETE', 'class' => "delete-validation form-delete-step-".$key]) }}
               {{ Form::close() }}
           </div>
         </div>
