@@ -73,4 +73,22 @@ class Step extends Model
 
         Step::observe(new StepObserver());
     }
+
+    /**
+     * Return the number of pois of a step
+     * @return int $count
+     */
+    public function nbPois()
+    {
+        $pois = $this->pois;
+        $count = 0;
+        if (is_array($pois)) {
+            foreach ($pois as $key => $poi) {
+                if(!empty($poi)){
+                    $count++;
+                }
+            }
+        }
+        return $count;
+    }
 }

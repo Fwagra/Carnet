@@ -17,6 +17,9 @@
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
                 <i class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $km }} {!! trans('step.km_traveled') !!}</span>
             </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                <i class="material-icons icon-align">place</i><span class="place icon-align">{{ $trip->nbPois() }} {!! trans_choice('step.places_visited', $trip->nbPois()) !!}</span>
+            </div>
           </div>
       </div>
       <div class="mdl-card__menu">
@@ -64,6 +67,11 @@
                       <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
                           <i class="material-icons icon-align">flag</i><span class="km icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
                       </div>
+                      @if ($step->nbPois() > 0)
+                          <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                              <i class="material-icons icon-align">place</i><span class="km icon-align">{{ $step->nbPois() }} {!! trans_choice('step.pois_nb', $step->nbPois()) !!}</span>
+                          </div>
+                      @endif
                   </div>
               </div>
               <div class="mdl-card__menu">

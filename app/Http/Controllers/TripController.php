@@ -84,7 +84,6 @@ class TripController extends Controller
         $first_step = $trip->steps()->firstStep()->first();
         $last_step = $trip->steps()->lastStep()->first();
         $dates = '';
-        // dd($first_step);
         if(!count($first_step) && !count($last_step)){
             $dates = trans('trip.not_begun');
         }

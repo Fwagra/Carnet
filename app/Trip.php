@@ -40,4 +40,18 @@ class Trip extends Model
         return $this->hasMany('App\Step');
     }
 
+
+    /**
+     * Return the number of pois of a trip
+     * @return int $count
+     */
+    public function nbPois()
+    {
+        $steps = $this->steps;
+        $count = 0;
+            foreach ($steps as $key => $step) {
+                $count += $step->nbPois();
+            }
+        return $count;
+    }
 }
