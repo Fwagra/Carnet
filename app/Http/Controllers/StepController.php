@@ -70,6 +70,7 @@ class StepController extends Controller
         $html_value = Markdown::string($request->get('md_value'));
         $trip_id = $trip->id;
         $pois = serialize($request->get('pois'));
+        $pois_icon = serialize($request->get('pois_icon'));
 
         $request->merge([
             'active' => $active,
@@ -77,6 +78,7 @@ class StepController extends Controller
             'html_value' => $html_value,
             'trip_id' => $trip_id,
             'pois' => $pois,
+            'pois_icon' => $pois_icon,
         ]);
 
         $step = Step::create($request->all());
@@ -107,7 +109,8 @@ class StepController extends Controller
     public function edit($trip, $step)
     {
         $pois = unserialize($step->pois);
-        return View::make('steps.edit', compact('trip', 'step', 'pois'));
+        $pois_icons = unserialize($step->pois_icon);
+        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons'));
     }
 
     /**
@@ -136,13 +139,14 @@ class StepController extends Controller
         $final_step = (!empty($request->get('final_step'))) ? '1' : '0';
         $html_value = Markdown::string($request->get('md_value'));
         $pois = serialize($request->get('pois'));
-
+        $pois_icon = serialize($request->get('pois_icon'));
 
         $request->merge([
             'active' => $active,
             'final_step' => $final_step,
             'html_value' => $html_value,
             'pois' => $pois,
+            'pois_icon' => $pois_icon,
         ]);
 
         $step->update($request->all());

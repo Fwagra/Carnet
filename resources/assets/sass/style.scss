@@ -130,3 +130,14 @@
         animation:none;
     }
 }
+.icon-choose-dialog{
+    .icon-list li{
+        cursor: pointer;
+        &.selected-icon{
+            background: #DCEDC8;
+        }
+    }
+}
+.arrow-icon{
+    margin-left: 2rem;
+}

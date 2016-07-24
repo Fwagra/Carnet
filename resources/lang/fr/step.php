@@ -33,5 +33,6 @@ return [
     'delete_success_msg' => "L'étape a  été supprimée :(",
     'deletion_confirmation' => "Suppression de l'étape",
     'delete_msg' => "Vous vous apprêtez à supprimer une étape de votre voyage. Cette action est irréversible. Pour continuer et supprimer le voyage, écrivez 'SUPPRIMER' dans le champ ci-dessous.",
-    'km_traveled' => "km"
+    'km_traveled' => "km",
+    'pois_form' => "Point d'intérêt"
 ];

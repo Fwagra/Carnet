@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
     checkMultiElementsNumber();
+
+
     $('.multi-elements .add-new-element').on('click', function(event) {
         event.preventDefault();
         var multi_elements = $(this).parents('.multi-elements');
@@ -8,6 +10,7 @@ jQuery(document).ready(function($) {
         $('input, textarea', new_element).val("");
         new_element.insertAfter(last_element);
         checkMultiElementsNumber();
+
     });
 
     $(document).on('click', '.multi-elements .remove-element',  function(event) {
@@ -15,6 +18,8 @@ jQuery(document).ready(function($) {
         $(this).parents('.multi-element').remove();
         checkMultiElementsNumber();
     });
+
+
 });
 
 function checkMultiElementsNumber() {

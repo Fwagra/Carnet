@@ -66,11 +66,12 @@
         @endif
     </div>
     <div class="pois-block multi-elements">
-        @if (isset($pois))
-            @foreach ($pois as $poi)
+        @if (isset($pois) && is_array($pois))
+            @foreach ($pois as $key => $poi)
                 @include('steps.pois')
             @endforeach
         @else
+            <?php  $key = 0; ?>
             @include('steps.pois')
         @endif
         <div class="mdl-card__actions">
