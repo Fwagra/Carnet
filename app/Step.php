@@ -23,6 +23,16 @@ class Step extends Model
     protected $dates = ['date'];
 
     /**
+    * The attributes that should be casted to native types.
+    *
+    * @var array
+    */
+    protected $casts = [
+        'pois' => 'array',
+        'pois_icon' => 'array',
+    ];
+
+    /**
      * Get the trip that owns the step.
      */
     public function trip()
@@ -48,6 +58,7 @@ class Step extends Model
     {
         return $query->orderBy('date', 'asc')->orderBy('id', 'asc');
     }
+
     /**
      * Retrieve the last step of a query
      * @return \Illuminate\Database\Eloquent\Builder
