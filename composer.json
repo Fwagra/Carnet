@@ -10,7 +10,8 @@
         "narutimateum/toastr-5.2-laravel": "dev-master",
         "laravelcollective/html": "5.2.*",
         "vtalbot/markdown": "2.0",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
