@@ -18,8 +18,8 @@
         @endif
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('date') ? ' is-invalid' : '' }}">
-
-        {!! Form::date('date',\Carbon\Carbon::now()->toDateString() , ['class' => 'mdl-textfield__input']) !!}
+        <?php $date = (isset($step))? $step->date : \Carbon\Carbon::now()->toDateString(); ?>
+        {!! Form::date('date',$date , ['class' => 'mdl-textfield__input']) !!}
         {!! Form::label('date', trans('step.date_form'), ['class' => "mdl-textfield__label"])!!}
         @if ($errors->has('date'))
             <span class="mdl-textfield__error">
