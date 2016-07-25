@@ -10,6 +10,7 @@ use Response;
 use Validator;
 use Image;
 use File;
+use DB;
 
 
 class PhotoController extends Controller
@@ -36,7 +37,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        return View::make('photos.index');
+        $photos = DB::table('photos')->paginate(12);
+        return View::make('photos.index', compact('photos'));
     }
 
     /**
@@ -46,7 +48,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        return View::make('photos.create');
     }
 
     /**

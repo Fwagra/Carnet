@@ -14,9 +14,9 @@ class CreatePivotPhotosSteps extends Migration
     {
         Schema::create('photo_step', function (Blueprint $table) {
             $table->integer('step_id')->unsigned();
-            $table->integer('photos_id')->unsigned();
+            $table->integer('photo_id')->unsigned();
             $table->foreign('step_id')->references('id')->on('steps');
-            $table->foreign('photos_id')->references('id')->on('photos');
+            $table->foreign('photo_id')->references('id')->on('photos');
         });
     }
 
