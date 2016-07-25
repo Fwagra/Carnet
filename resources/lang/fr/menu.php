@@ -14,4 +14,5 @@ return [
     'logout' => 'Déconnexion',
     'new_trip' => 'Ajouter un voyage',
     'home' => 'Accueil',
+    'img_management' => 'Gérer les photos',
 ];

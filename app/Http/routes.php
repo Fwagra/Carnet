@@ -17,5 +17,7 @@ Route::get('/', 'TripController@index');
 
 Route::resource('trip', 'TripController');
 Route::resource('trip.step', 'StepController');
+Route::resource('photo', 'PhotoController');
 Route::model('trip', 'App\Trip');
 Route::model('step', 'App\Step');
+Route::model('photo', 'App\Photo');
