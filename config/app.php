@@ -158,6 +158,7 @@ return [
         narutimateum\Toastr\ToastrServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -208,6 +209,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Markdown' => VTalbot\Markdown\Facades\Markdown::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];
