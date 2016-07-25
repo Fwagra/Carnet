@@ -13,4 +13,11 @@ class Photo extends Model
      */
     protected $guarded = ['id'];
 
+    /**
+    * The photos belongs to many steps
+    */
+   public function steps()
+   {
+       return $this->belongsToMany('App\Step');
+   }
 }

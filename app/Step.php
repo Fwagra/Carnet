@@ -91,4 +91,12 @@ class Step extends Model
         }
         return $count;
     }
+
+    /**
+    * The photos that belong to the step.
+    */
+   public function photos()
+   {
+       return $this->belongsToMany('App\Photo');
+   }
 }
