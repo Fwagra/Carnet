@@ -148,6 +148,16 @@ class PhotoController extends Controller
      */
     public function destroy($photo)
     {
-        //
+        if(File::isFile($photo->getFull()))
+           File::delete($photo->getFull());
+        if(File::isFile($photo->getLight()))
+           File::delete($photo->getLight());
+        if(File::isFile($photo->getThumb()))
+           File::delete($photo->getThumb());
+
+       $photo->delete();
+
+       Toastr::success(trans('photo.update_delete_msg'));
+       return redirect()->route('photo.index');
     }
 }
