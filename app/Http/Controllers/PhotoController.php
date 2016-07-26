@@ -11,6 +11,7 @@ use Validator;
 use Image;
 use File;
 use DB;
+use Toastr;
 
 
 class PhotoController extends Controller
@@ -127,7 +128,16 @@ class PhotoController extends Controller
      */
     public function update(Request $request, $photo)
     {
-        //
+        $this->validate($request, [
+            'name' => 'max:255',
+            'description' => 'max:500',
+        ]);
+
+        $photo->update($request->all());
+
+        Toastr::success(trans('photo.update_success_msg'));
+        return redirect()->route('photo.index');
+
     }
 
     /**
