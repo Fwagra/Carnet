@@ -3,6 +3,10 @@
 @section('content')
     <div class="mdl-grid content-grid index-photos">
         <div class="mdl-card centered  mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-photo goto">
+                <a class="goto-link" href="{{route('photo.create')}}"></a>
+                <i class="material-icons">add</i>
+            </button>
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">{!! trans('photo.management_title') !!}</h2>
             </div>

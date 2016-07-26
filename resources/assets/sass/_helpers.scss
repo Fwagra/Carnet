@@ -11,6 +11,12 @@ form{
     flex-grow: 1;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
 .mdl-menu__item a{
     text-decoration: none;
     color: inherit;

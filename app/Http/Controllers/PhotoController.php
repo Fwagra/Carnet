@@ -37,7 +37,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $photos = DB::table('photos')->paginate(12);
+        $photos = DB::table('photos')->orderBy('id', 'desc')->paginate(12);
         return View::make('photos.index', compact('photos'));
     }
 
@@ -99,10 +99,10 @@ class PhotoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  App\Photo $photo
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($photo)
     {
         //
     }
@@ -110,22 +110,22 @@ class PhotoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  App\Photo $photo
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($photo)
     {
-        //
+        return View::make('photos.edit', compact('photo'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  App\Photo $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $photo)
     {
         //
     }
@@ -133,10 +133,10 @@ class PhotoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  App\Photo $photo
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($photo)
     {
         //
     }
