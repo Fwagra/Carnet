@@ -14,7 +14,7 @@
                 @forelse ($photos as $photo)
                     <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--2-col-tablet">
                         <a href="{{ route('photo.edit', [$photo->id])}}">
-                            <img src="{{ url('uploads/photos/thumb/'.$photo->filename)}}" alt="" />
+                            <img src="{{ url($photo->getThumb())}}" alt="" />
                         </a>
                     </div>
                 @empty

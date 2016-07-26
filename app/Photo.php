@@ -10,11 +10,31 @@ class Photo extends Model
     protected $pathImagesLight = 'uploads/photos/light/';
     protected $pathImagesThumb = 'uploads/photos/thumb/';
 
+
+    /**
+    * Return the path for the "Thumb" version of an image
+    */
+    public function getThumb()
+    {
+        return $this->pathImagesThumb . $this->filename;
+    }
+
+    /**
+     * Return the path for the "Light" version of an image
+     */
     public function getLight()
     {
         return $this->pathImagesLight . $this->filename;
     }
-    
+
+    /**
+     * Return the path for the "Full" version of an image
+     */
+    public function getFull()
+    {
+        return $this->pathImages . $this->filename;
+    }
+
     /**
      * The attributes that are not mass assignable.
      *
