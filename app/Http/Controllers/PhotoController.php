@@ -68,10 +68,9 @@ class PhotoController extends Controller
 		{
 			return Response::make($validator->errors()->first(), 400);
 		}
-
         $file = $request->file('file');
         $extension = $file->extension();
-        $filename = sha1(time().time()).".{$extension}";
+        $filename = sha1(time().uniqid()).".{$extension}";
 
         // Saving "Full size" image
         $image_full = Image::make($file);
@@ -95,6 +94,7 @@ class PhotoController extends Controller
         $image_thumb->save($this->pathImagesThumb.$filename);
 
         $photo = Photo::create(['filename' => $filename]);
+        return $filename;
     }
 
     /**
