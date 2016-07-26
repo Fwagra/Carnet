@@ -82,6 +82,11 @@
         </div>
     </div>
 
+    <div class="images-add-block">
+        <div class="count-img"></div>
+        <div class="btn add-photos-btn">{!! trans('step.add_img_btn ') !!}</div>
+    </div>
+
     <label for="activate" class="mdl-switch mdl-js-switch">
         <input type="checkbox" id="activate" name="active" value="1" @if (!isset($step) || $step->active == 1)
             checked

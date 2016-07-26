@@ -19,5 +19,8 @@ return [
     'update_success_msg' => "La photo a bien été modifiée!",
     'update_delete_msg' => "La photo a bien été supprimée...",
     'delete_tooltip' => "Supprimer la photo",
-    'no_photo_list_msg' => "Aucune photo ajoutée. Utilisez le gros bouton + au dessus!"
+    'no_photo_list_msg' => "Aucune photo ajoutée. Utilisez le gros bouton + au dessus!",
+    'title_popup' => "Choisir des photos",
+    'message_popup' => "Choisissez les photos associées à cette étape dans la liste.",
+    'close_popup' => "Fermer",
 ];

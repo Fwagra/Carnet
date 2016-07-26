@@ -33,6 +33,3 @@
         </div>
     </div>
 </div>
-@section('footer')
-    @include('layouts.pois_icons_popup')
-@endsection

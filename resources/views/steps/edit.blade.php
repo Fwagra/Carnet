@@ -12,3 +12,7 @@
         </div>
     </div>
 @endsection
+@section('footer')
+    @include('layouts.step_images_popup')
+    @include('layouts.pois_icons_popup')
+@endsection
