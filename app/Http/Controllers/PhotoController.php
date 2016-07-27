@@ -43,6 +43,17 @@ class PhotoController extends Controller
     }
 
     /**
+     * Display a listing of photos usable in selection popups
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listPopup()
+    {
+        $photos = Photo::orderBy('id', 'desc')->simplePaginate(8);
+        return View::make('photos.list-popup', compact('photos'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

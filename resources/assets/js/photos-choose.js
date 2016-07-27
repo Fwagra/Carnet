@@ -13,5 +13,6 @@ if(dialogPhoto  != null){
 
 jQuery(document).on('click', '.add-photos-btn', function(event) {
     event.preventDefault();
+    jQuery('.ajax-content', dialogPhoto).load(popupConfig.url);
     dialogPhoto.showModal();
 });

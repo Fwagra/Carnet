@@ -23,4 +23,5 @@ return [
     'title_popup' => "Choisir des photos",
     'message_popup' => "Choisissez les photos associées à cette étape dans la liste.",
     'close_popup' => "Fermer",
+    'add_photo_btn' => "Ajouter des photos",
 ];
