@@ -41,6 +41,21 @@ if(dialogPhoto  != null){
         loadPhotos(jQuery(this).attr('href'));
     });
 
+    // Update the var containing the selected photos on click
+    jQuery(document).on('click', '.photo-choose-dialog .photo-element', function(event) {
+        event.preventDefault();
+        var photoId = jQuery(this).data('id');
+        var index = selectedImages.indexOf(photoId);
+        console.log(index);
+        if(index > -1){
+            selectedImages.splice(index, 1);
+        }else{
+            selectedImages.push(photoId);
+        }
+        selectPhotos();
+        console.log(selectedImages);
+    });
+
     /**
      * Load the photos
      */
@@ -71,7 +86,10 @@ if(dialogPhoto  != null){
             var photoId = jQuery(el).data('id');
             if(images.indexOf(photoId) != -1){
                 jQuery(el).addClass('selected');
+            }else{
+                jQuery(el).removeClass('selected');
             }
         });
     }
+
 }
