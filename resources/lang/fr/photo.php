@@ -25,4 +25,5 @@ return [
     'close_popup' => "Fermer",
     'add_photo_btn' => "Ajouter des photos",
     'backto_photo_btn' => "Revenir aux photos",
+    'dropzone_message' => "Cliquez ici ou faites glisser vos images dans le cadre",
 ];

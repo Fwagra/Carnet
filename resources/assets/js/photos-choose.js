@@ -26,10 +26,17 @@ if(dialogPhoto  != null){
             jQuery(this).removeClass('active');
             jQuery(this).html(popupConfig.btn.addphoto);
         }else{
-            content.load(popupConfig.addurl);
+            content.load(popupConfig.addurl, function(){
+                Dropzone.autodiscover = false;
+                Dropzone.options.mydropzone = {
+                    dictDefaultMessage: popupConfig.msg.dropzone
+                };
+                Dropzone.discover();
+            });
             jQuery(this).addClass('active');
             jQuery(this).html(popupConfig.btn.backtophotos);
-            Dropzone.discover();
+
+
         }
     });
 }

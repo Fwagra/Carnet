@@ -26,6 +26,9 @@
         btn:{
             addphoto:"{!! trans('photo.add_photo_btn') !!}",
             backtophotos:"{!! trans('photo.backto_photo_btn') !!}"
+        },
+        msg:{
+            dropzone:"{!! trans('photo.dropzone_message') !!}"
         }
     }
 </script>
