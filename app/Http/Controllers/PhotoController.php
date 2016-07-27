@@ -53,6 +53,10 @@ class PhotoController extends Controller
         return View::make('photos.list-popup', compact('photos'));
     }
 
+    public function addForm()
+    {
+        return View::make('photos.add-form');
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -1,10 +1,11 @@
 <dialog class="mdl-dialog photo-choose-dialog">
   <div class="mdl-dialog__title">
-      <h4>{!! trans('photo.title_popup') !!}</h4>
-      <div class="section-spacer"></div>
-      <button class="mdl-button mdl-js-button  mdl-button--accent">
-          {!! trans('photo.add_photo_btn') !!}
-      </button>
+      <h4>{!! trans('photo.title_popup') !!}
+          <button class="mdl-button mdl-js-button  mdl-button--accent trigger-add-photos">
+              {!! trans('photo.add_photo_btn') !!}
+          </button>
+      </h4>
+
   </div>
   <div class="mdl-dialog__content">
       <p class="popup-message">
@@ -20,6 +21,11 @@
 </dialog>
 <script type="text/javascript">
     var popupConfig = {
-        url: "{{ route('photo.listing') }}"
+        url: "{{ route('photo.listing') }}",
+        addurl: "{{ route('photo.addform') }}",
+        btn:{
+            addphoto:"{!! trans('photo.add_photo_btn') !!}",
+            backtophotos:"{!! trans('photo.backto_photo_btn') !!}"
+        }
     }
 </script>

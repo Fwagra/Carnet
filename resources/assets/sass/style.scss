@@ -155,7 +155,10 @@
 }
 .photo-choose-dialog{
     max-width: 80%;
-    width: 100%
+    width: 100%;
+    .trigger-add-photos{
+        float: right;
+    }
 }
 .dropzone input{
     display: none;
