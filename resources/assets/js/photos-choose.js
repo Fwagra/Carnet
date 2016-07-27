@@ -7,6 +7,7 @@ if(dialogPhoto  != null){
         dialogPolyfill.registerDialog(dialogPhoto);
     }
 
+    updateHiddenField(jQuery('.hidden-photos'), selectedImages);
     // Bind close button
     dialogPhoto.querySelector('.close').addEventListener('click', function() {
         dialogPhoto.close();
@@ -46,14 +47,13 @@ if(dialogPhoto  != null){
         event.preventDefault();
         var photoId = jQuery(this).data('id');
         var index = selectedImages.indexOf(photoId);
-        console.log(index);
         if(index > -1){
             selectedImages.splice(index, 1);
         }else{
             selectedImages.push(photoId);
         }
         selectPhotos();
-        console.log(selectedImages);
+        updateHiddenField(jQuery('.hidden-photos'), selectedImages);
     });
 
     /**
@@ -90,6 +90,13 @@ if(dialogPhoto  != null){
                 jQuery(el).removeClass('selected');
             }
         });
+    }
+
+
+    function updateHiddenField(field, val) {
+        val = JSON.stringify(val);
+        val = JSON.parse(val);
+        field.val(val);
     }
 
 }

@@ -32,10 +32,10 @@
         }
     };
     @if(isset($photosJSON))
+    console.log('dsd');
         var selectedImages = {{ $photosJSON }}
     @else
-        var selectedImages = {};
+        var selectedImages = [];
     @endif
-
     console.log(selectedImages);
 </script>

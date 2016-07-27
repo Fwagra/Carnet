@@ -1,4 +1,5 @@
 <div class="mdl-card__supporting-text">
+    {{ Form::hidden('photos', $fieldPhotos, ['class' => 'hidden-photos']) }}
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('name') ? ' is-invalid' : '' }}">
         {!! Form::text('name',null, ['class' => 'mdl-textfield__input']) !!}
         {!! Form::label('name', trans('step.name_form'), ['class' => "mdl-textfield__label"])!!}

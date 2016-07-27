@@ -42,7 +42,10 @@ class StepController extends Controller
      */
     public function create($trip)
     {
-        return View::make('steps.create', compact('trip'));
+        $photosJSON = [];
+        $fieldPhotos = serialize($photosJSON);
+
+        return View::make('steps.create', compact('trip',  'fieldPhotos'));
     }
 
     /**
@@ -65,6 +68,10 @@ class StepController extends Controller
         if(!empty($request->get('final_step'))){
             $this->resetOtherFinalSteps($trip);
         }
+
+        //Sync photos
+        $photos = $request->get('photos');
+        $photos = explode(',', $photos);
         $active = (!empty($request->get('active'))) ? '1' : '0';
         $final_step = (!empty($request->get('final_step'))) ? '1' : '0';
         $html_value = Markdown::string($request->get('md_value'));
@@ -77,7 +84,9 @@ class StepController extends Controller
             'trip_id' => $trip_id,
         ]);
 
-        $step = Step::create($request->all());
+        $step = Step::create($request->except('photos'));
+        if(!empty($photos[0]))
+            $step->photos()->sync($photos);
 
         Toastr::success(trans('step.create_success_msg'));
         return redirect()->action('TripController@show', ['trip' => $trip->slug]);
@@ -107,14 +116,18 @@ class StepController extends Controller
         $pois = $step->pois;
         $pois_icons = $step->pois_icon;
         $photos = $step->photos()->select('id')->get();
+
         $photosJSON = [];
         if(count($photos)){
             foreach ($photos as $key => $photo) {
                 $photosJSON[] = $photo->id;
             }
         }
+
+        $fieldPhotos = serialize($photosJSON);
         $photosJSON = json_encode($photosJSON);
-        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons','photosJSON'));
+
+        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons','photosJSON', 'fieldPhotos'));
     }
 
     /**
@@ -138,6 +151,12 @@ class StepController extends Controller
         if(!empty($request->get('final_step'))){
             $this->resetOtherFinalSteps($trip);
         }
+        //Sync photos
+        $photos = $request->get('photos');
+        $photos = explode(',', $photos);
+        $photos = (empty($photos[0])) ? [] : $photos;
+
+        $step->photos()->sync($photos);
 
         $active = (!empty($request->get('active'))) ? '1' : '0';
         $final_step = (!empty($request->get('final_step'))) ? '1' : '0';
@@ -149,7 +168,7 @@ class StepController extends Controller
             'html_value' => $html_value,
         ]);
 
-        $step->update($request->all());
+        $step->update($request->except('photos'));
 
         Toastr::success(trans('step.update_success_msg'));
         return redirect()->action('TripController@show', ['trip' => $trip->slug]);
