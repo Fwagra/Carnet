@@ -159,6 +159,9 @@
     .trigger-add-photos{
         float: right;
     }
+    .selected {
+        border: 10px solid #4CAF50;
+    }
 }
 .dropzone input{
     display: none;
