@@ -30,5 +30,12 @@
         msg:{
             dropzone:"{!! trans('photo.dropzone_message') !!}"
         }
-    }
+    };
+    @if(isset($photosJSON))
+        var selectedImages = {{ $photosJSON }}
+    @else
+        var selectedImages = {};
+    @endif
+
+    console.log(selectedImages);
 </script>

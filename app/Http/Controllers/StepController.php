@@ -106,7 +106,15 @@ class StepController extends Controller
     {
         $pois = $step->pois;
         $pois_icons = $step->pois_icon;
-        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons'));
+        $photos = $step->photos()->select('id')->get();
+        $photosJSON = [];
+        if(count($photos)){
+            foreach ($photos as $key => $photo) {
+                $photosJSON[] = $photo->id;
+            }
+        }
+        $photosJSON = json_encode($photosJSON);
+        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons','photosJSON'));
     }
 
     /**
