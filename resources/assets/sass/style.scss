@@ -28,6 +28,7 @@
 }
 // HOMEPAGE
 .trip-list,
+.show-step,
 .steps-list{
     .mdl-card{
         overflow: visible;
@@ -43,6 +44,7 @@
         align-items: flex-end;
         position: relative;
     }
+    h2,
     h2 a {
         color: #FFF;
     }

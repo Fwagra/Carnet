@@ -39,4 +39,6 @@ return [
     'pois_nb' => "Point d'intérêt|Points d'intérêt",
     'photos_nb' => "Photo|Photos",
     'add_img_btn' => "Ajouter des photos",
+    'step_title' => "Étape :name",
+    'goto_photos' => "Aller aux photos",
 ];

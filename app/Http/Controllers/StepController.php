@@ -8,6 +8,7 @@ use Markdown;
 use Toastr;
 use App\Step;
 use App\Trip;
+use App\Photo;
 use App\Http\Requests;
 
 class StepController extends Controller
@@ -102,7 +103,8 @@ class StepController extends Controller
      */
     public function show($trip, $step)
     {
-        dd($step);
+        $featured = ($step->image_id > 0)? Photo::find($step->image_id) : null;
+        return View::make('steps.show', compact('trip','step', 'featured'));
     }
 
     /**
