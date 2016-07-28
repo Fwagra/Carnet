@@ -163,6 +163,23 @@
         border: 10px solid #4CAF50;
     }
 }
+dialog .pager{
+    li{
+        display: inline-block;
+    }
+    a,span{
+        padding: .5rem 1rem;
+        background: rgb(255,171,64);
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        border-radius: 2px;
+
+    }
+    .disabled span{
+        background: #BDBDBD;
+    }
+}
 .dropzone input{
     display: none;
 }

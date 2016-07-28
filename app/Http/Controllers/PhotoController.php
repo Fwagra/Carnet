@@ -38,7 +38,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $photos = Photo::orderBy('id', 'desc')->paginate(12);
+        $photos = Photo::orderBy('id', 'desc')->paginate(24);
         return View::make('photos.index', compact('photos'));
     }
 
@@ -49,7 +49,7 @@ class PhotoController extends Controller
      */
     public function listPopup()
     {
-        $photos = Photo::orderBy('id', 'desc')->simplePaginate(8);
+        $photos = Photo::orderBy('id', 'desc')->simplePaginate(12);
         return View::make('photos.list-popup', compact('photos'));
     }
 
