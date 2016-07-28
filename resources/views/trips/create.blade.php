@@ -12,3 +12,6 @@
         </div>
     </div>
 @endsection
+@section('footer')
+    @include('layouts.step_images_popup')
+@endsection
