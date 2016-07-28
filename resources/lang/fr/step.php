@@ -37,5 +37,6 @@ return [
     'pois_form' => "Point d'intérêt",
     'places_visited' => "Points d'intérêt visités|Points d'intérêt visités",
     'pois_nb' => "Point d'intérêt|Points d'intérêt",
+    'photos_nb' => "Photo|Photos",
     'add_img_btn' => "Ajouter des images",
 ];

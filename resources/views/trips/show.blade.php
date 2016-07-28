@@ -20,6 +20,9 @@
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
                 <i class="material-icons icon-align">place</i><span class="place icon-align">{{ $trip->nbPois() }} {!! trans_choice('step.places_visited', $trip->nbPois()) !!}</span>
             </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                <i class="material-icons icon-align">image</i><span class="place icon-align">{{ $trip->nbPhotos() }} {!! trans_choice('step.photos_nb', $trip->nbPhotos()) !!}</span>
+            </div>
           </div>
       </div>
       @if (Auth::check())
@@ -72,6 +75,11 @@
                       @if ($step->nbPois() > 0)
                           <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
                               <i class="material-icons icon-align">place</i><span class="km icon-align">{{ $step->nbPois() }} {!! trans_choice('step.pois_nb', $step->nbPois()) !!}</span>
+                          </div>
+                      @endif
+                      @if ($step->nbPhotos() > 0)
+                          <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
+                              <i class="material-icons icon-align">image</i><span class="km icon-align">{{ $step->nbPhotos() }} {!! trans_choice('step.photos_nb', $step->nbPhotos()) !!}</span>
                           </div>
                       @endif
                   </div>
