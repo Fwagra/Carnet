@@ -1,5 +1,6 @@
 var dialogPhoto = document.querySelector('dialog.photo-choose-dialog');
 if(dialogPhoto  != null){
+
     var loader = dialogPhoto.querySelector('.mdl-progress');
     var content = jQuery('.ajax-content', dialogPhoto);
     // Fallback for old browsers with polyfill
@@ -7,7 +8,10 @@ if(dialogPhoto  != null){
         dialogPolyfill.registerDialog(dialogPhoto);
     }
 
-    updateHiddenField(jQuery('.hidden-photos'), selectedImages);
+    if(typeof selectedImages !== 'undefined'){
+        updateHiddenField(jQuery('.hidden-photos'), selectedImages);
+    }
+    
     // Bind close button
     dialogPhoto.querySelector('.close').addEventListener('click', function() {
         dialogPhoto.close();

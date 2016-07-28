@@ -98,7 +98,7 @@
     </label>
 
 </div>
-<div class="mdl-card__actions mdl-card--border">
+<div class="mdl-card__actions mdl-card--border multi-btns">
     <div class="section-spacer"></div>
 
         <div class="images-add-block">

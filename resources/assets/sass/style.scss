@@ -189,3 +189,15 @@ dialog .pager{
 .dropzone input{
     display: none;
 }
+@media screen and (max-device-width: 479px) {
+    .mdl-card .mdl-card__actions.multi-btns{
+        display: block;
+
+        .mdl-button{
+            display: block;
+            margin-bottom: .5rem;
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
