@@ -26,4 +26,6 @@ return [
     'add_photo_btn' => "Ajouter des photos",
     'backto_photo_btn' => "Revenir aux photos",
     'dropzone_message' => "Cliquez ici ou faites glisser vos images dans le cadre",
+    'change_featured_photo' => "Modifier la photo de tête",
+    'add_featured_photo' => "Ajouter une  photo de tête",
 ];

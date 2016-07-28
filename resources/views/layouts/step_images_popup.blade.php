@@ -19,21 +19,3 @@
     <button type="button" class="mdl-button close">{!! trans('photo.close_popup') !!}</button>
   </div>
 </dialog>
-<script type="text/javascript">
-    var popupConfig = {
-        url: "{{ route('photo.listing') }}",
-        addurl: "{{ route('photo.addform') }}",
-        btn:{
-            addphoto:"{!! trans('photo.add_photo_btn') !!}",
-            backtophotos:"{!! trans('photo.backto_photo_btn') !!}"
-        },
-        msg:{
-            dropzone:"{!! trans('photo.dropzone_message') !!}"
-        }
-    };
-    @if(isset($photosJSON))
-        var selectedImages = {{ $photosJSON }}
-    @else
-        var selectedImages = [];
-    @endif
-</script>

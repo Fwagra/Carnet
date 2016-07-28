@@ -11,7 +11,7 @@ if(dialogPhoto  != null){
     if(typeof selectedImages !== 'undefined'){
         updateHiddenField(jQuery('.hidden-photos'), selectedImages);
     }
-    
+
     // Bind close button
     dialogPhoto.querySelector('.close').addEventListener('click', function() {
         dialogPhoto.close();
@@ -20,6 +20,13 @@ if(dialogPhoto  != null){
     // Display the popup
     jQuery(document).on('click', '.add-photos-btn', function(event) {
         event.preventDefault();
+        jQuery(dialogPhoto).removeClass('one-photo');
+        loadPhotos();
+        dialogPhoto.showModal();
+    });
+    jQuery(document).on('click', '.featured-img-btn', function(event) {
+        event.preventDefault();
+        jQuery(dialogPhoto).addClass('one-photo');
         loadPhotos();
         dialogPhoto.showModal();
     });
@@ -51,14 +58,23 @@ if(dialogPhoto  != null){
         event.preventDefault();
         var photoId = jQuery(this).data('id');
         var index = selectedImages.indexOf(photoId);
-        if(index > -1){
-            selectedImages.splice(index, 1);
+        if(jQuery(dialogPhoto).hasClass('one-photo')){
+            if(photoId == featured){
+                featuredField.value = featured = 0;
+            }else{
+                featuredField.value = featured = photoId;
+            }
+            selectFeatured(featured);
         }else{
-            selectedImages.push(photoId);
+            if(index > -1){
+                selectedImages.splice(index, 1);
+            }else{
+                selectedImages.push(photoId);
+            }
+            selectPhotos();
+            updateHiddenField(jQuery('.hidden-photos'), selectedImages);
+            updateBadgeCount();
         }
-        selectPhotos();
-        updateHiddenField(jQuery('.hidden-photos'), selectedImages);
-        updateBadgeCount();
     });
 
     /**
@@ -66,7 +82,11 @@ if(dialogPhoto  != null){
      */
     function loadPhotos(url = popupConfig.url){
         content.load(url, function(){
-            selectPhotos();
+            if(jQuery(dialogPhoto).hasClass('one-photo')){
+                selectFeatured(featured);
+            }else{
+                selectPhotos();
+            }
         });
     }
 
@@ -98,6 +118,22 @@ if(dialogPhoto  != null){
     }
 
     /**
+     * Add the border around the featured image
+     */
+    function selectFeatured(featured) {
+        if(jQuery.isNumeric(featured)){
+            jQuery('.photo-element', content).each(function(index, el) {
+                if(jQuery(el).data('id') == featured){
+                    jQuery(el).addClass('selected');
+                }else{
+                    jQuery(el).removeClass('selected');
+                }
+            });
+            updateFeaturedButton(featuredField);
+        }
+    }
+
+    /**
      * Update the hidden field containing the values of the soon te be synced photos
      */
     function updateHiddenField(field, val) {
@@ -106,9 +142,18 @@ if(dialogPhoto  != null){
         field.val(val);
     }
 
+
     function updateBadgeCount(badge = jQuery('.add-photos-btn')) {
         var counter = selectedImages.length;
         badge.attr('data-badge', counter);
+    }
+
+    function updateFeaturedButton(featuredField) {
+        if(featuredField.value == 0){
+            jQuery('.featured-img-btn span').html(popupConfig.btn.addfeatured);
+        }else{
+            jQuery('.featured-img-btn span').html(popupConfig.btn.changefeatured);
+        }
     }
 
 }

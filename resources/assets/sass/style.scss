@@ -162,6 +162,9 @@
     .selected {
         border: 10px solid #4CAF50;
     }
+    .photo-element{
+        cursor: pointer;
+    }
 }
 .images-add-block{
     margin-right: .5rem;
@@ -170,6 +173,8 @@ dialog .mdl-progress{
     margin: 6rem auto;
 }
 dialog .pager{
+    text-align: center;
+    padding-left: 0;
     li{
         display: inline-block;
     }
@@ -197,6 +202,12 @@ dialog .pager{
             display: block;
             margin-bottom: .5rem;
             width: 100%;
+            padding: 0;
+        }
+    }
+    dialog {
+        .img-gallery,
+        .mdl-dialog__content{
             padding: 0;
         }
     }

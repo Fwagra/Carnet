@@ -1,5 +1,15 @@
 <div class="mdl-card__supporting-text">
     {{ Form::hidden('photos', $fieldPhotos, ['class' => 'hidden-photos']) }}
+    {{ Form::hidden('image_id',null, ['class' => 'image-id']) }}
+    <?php $featured_btn = (isset($step) && $step->image_id > 0)? trans('photo.change_featured_photo') : trans('photo.add_featured_photo'); ?>
+    <div class="mdl-card__actions">
+        <div class="section-spacer"></div>
+        <button type=button class="btn featured-img-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored ripple-effet">
+            <i class="material-icons">image</i><span>
+                {{ $featured_btn }}
+            </span>
+        </button>
+    </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('name') ? ' is-invalid' : '' }}">
         {!! Form::text('name',null, ['class' => 'mdl-textfield__input']) !!}
         {!! Form::label('name', trans('step.name_form'), ['class' => "mdl-textfield__label"])!!}
@@ -77,7 +87,7 @@
         @endif
         <div class="mdl-card__actions">
             <div class="section-spacer"></div>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab add-new-element">
+            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab add-new-element">
               <i class="material-icons">add</i>
             </button>
         </div>
@@ -102,9 +112,31 @@
     <div class="section-spacer"></div>
 
         <div class="images-add-block">
-            <div class="btn add-photos-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored ripple-effet mdl-badge mdl-badge--overlap" data-badge="{{ $count}}">
+            <button type=button class="btn add-photos-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored ripple-effet mdl-badge mdl-badge--overlap" data-badge="{{ $count}}">
                 <i class="material-icons">image</i>{!! trans('step.add_img_btn') !!}
-            </div>
+            </button>
         </div>
     {!! Form::submit(trans('step.submit_btn'), ['class' => "mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect mdl-button--primary"]) !!}
 </div>
+<script type="text/javascript">
+    var popupConfig = {
+        url: "{{ route('photo.listing') }}",
+        addurl: "{{ route('photo.addform') }}",
+        btn:{
+            addphoto:"{!! trans('photo.add_photo_btn') !!}",
+            backtophotos:"{!! trans('photo.backto_photo_btn') !!}",
+            addfeatured: "{!! trans('photo.add_featured_photo')  !!}",
+            changefeatured: "{!! trans('photo.change_featured_photo')  !!}"
+        },
+        msg:{
+            dropzone:"{!! trans('photo.dropzone_message') !!}"
+        }
+    };
+    @if(isset($photosJSON))
+        var selectedImages = {{ $photosJSON }}
+    @else
+        var selectedImages = [];
+    @endif
+    var featuredField = document.querySelector('.image-id');
+    var featured = featuredField.value;
+</script>
