@@ -6,10 +6,12 @@
     @forelse ($trips as $trip)
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__media mdl-color-text--grey-50">
-              @if ($trip->finished)
-                  {!! trans('trip.finished_msg') !!}
-              @endif
-            <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">{{ $trip->name }}</a></h2>
+            <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">
+                @if ($trip->finished)
+                    {!! trans('trip.finished_msg') !!}
+                @endif
+                {{ $trip->name }}
+            </a></h2>
             @if (Auth::check())
                 <div class="mdl-card__menu">
                     <button id="menu-{{$i}}" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">

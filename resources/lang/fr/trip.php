@@ -35,4 +35,5 @@ return [
     'delete_success_msg' => "Le voyage a bien été supprimé.",
     'date_not_finished' => "En cours",
     'not_begun' => "Pas encore commencé",
+    'finished_msg' => "Terminé : ",
 ];

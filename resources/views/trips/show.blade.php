@@ -4,10 +4,14 @@
 <div class="content-grid mdl-grid steps-list">
     <div class="mdl-card mdl-cell mdl-cell--12-col trip-head">
       <div class="mdl-card__media mdl-color-text--grey-50">
-          @if ($trip->finished)
-              {!! trans('trip.finished_msg') !!}
-          @endif
-        <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">{{ $trip->name }}</a></h2>
+        <h2 class="mdl-card__title-text">
+            <a href="{{ route('trip.show', $trip->slug) }}">
+                @if ($trip->finished)
+                    {!! trans('trip.finished_msg') !!}
+                @endif
+                {{ $trip->name }}
+            </a>
+        </h2>
       </div>
       <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
           <div class="mdl-grid">
