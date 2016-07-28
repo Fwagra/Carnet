@@ -58,13 +58,14 @@
             <h2 class="mdl-card__title-text"></h2>
           </div>
           <div class="mdl-card__supporting-text">
-
+              <div class="content-text">
+                  {!! $step->html_value !!}
+              </div>
           </div>
           <div class="mdl-card__menu">
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-              <i class="material-icons">share</i>
+              <i class="material-icons">mode_comment</i>
             </button>
-
           </div>
         </div>
     </div>

@@ -43,10 +43,10 @@
         flex-direction: row;
         align-items: flex-end;
         position: relative;
-    }
-    h2,
-    h2 a {
-        color: #FFF;
+        h2,
+        h2 a {
+            color: #FFF;
+        }
     }
 }
 
@@ -156,6 +156,20 @@
         h4,
         .mdl-list{
             margin: 0;
+        }
+    }
+    .desc-block{
+        .content-text{
+            max-width: 70%;
+            margin: 0 auto;
+        }
+    }
+    @media screen and (max-device-width: 479px) {
+        .desc-block{
+            .content-text{
+                max-width: 90%;
+                margin: 0 auto;
+            }
         }
     }
 }
