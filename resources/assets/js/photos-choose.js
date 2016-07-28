@@ -1,6 +1,6 @@
 var dialogPhoto = document.querySelector('dialog.photo-choose-dialog');
 if(dialogPhoto  != null){
-    var loader = dialogPhoto.querySelector('.mdl-spinner');
+    var loader = dialogPhoto.querySelector('.mdl-progress');
     var content = jQuery('.ajax-content', dialogPhoto);
     // Fallback for old browsers with polyfill
     if (! dialogPhoto.showModal) {

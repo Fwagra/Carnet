@@ -12,7 +12,7 @@
           {!! trans('photo.message_popup') !!}
       </p>
       <div class="ajax-content">
-          <div class="mdl-spinner mdl-js-spinner is-active"></div>
+         <div  class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
       </div>
   </div>
   <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
