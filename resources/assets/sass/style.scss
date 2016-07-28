@@ -144,6 +144,22 @@
     margin-left: 2rem;
 }
 
+// Step view
+
+.show-step{
+    .resume-block{
+        .mdl-card__media{
+            flex: auto;
+        }
+    }
+    .pois-block{
+        h4,
+        .mdl-list{
+            margin: 0;
+        }
+    }
+}
+
 // photos
 .index-photos{
     &>.mdl-card{

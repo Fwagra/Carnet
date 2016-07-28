@@ -19,21 +19,36 @@
                      <i class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
                  </div>
                  <div class="section-spacer"></div>
-                 <a href="#photos" class="mdl-button mdl-js-button  mdl-button--accent goto">{!! trans('step.goto_photos') !!}</a>
+                 <a href="#photos" class="mdl-button mdl-js-button  mdl-button--accent ">{!! trans('step.goto_photos') !!}</a>
              </div>
           </div>
-          <div class="mdl-card__menu">
-            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect goto">
-              <i class="material-icons md-light">edit_mode</i>
-              <a class="goto-link" href="{{ route('trip.step.edit', [$trip->slug, $step->id])}}"></a>
-            </button>
-
-          </div>
+          @if (Auth::check())
+              <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect goto">
+                  <i class="material-icons md-light">edit_mode</i>
+                  <a class="goto-link" href="{{ route('trip.step.edit', [$trip->slug, $step->id])}}"></a>
+                </button>
+              </div>
+          @endif
         </div>
         {{-- Points of interest block --}}
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col pois-block">
           <div class="mdl-card__title  mdl-card--expand">
-
+              <h4><i class="material-icons icon-align">place</i> {!! trans('step.pois_block_title') !!}</h4>
+          </div>
+          <div class="mdl-card__supporting-text">
+              <ul class="mdl-list">
+                  @forelse ($step->pois as $key => $poi)
+                      <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">{{$step->pois_icon[$key]}}</i>
+                           {{ $poi }}
+                        </span>
+                      </li>
+                  @empty
+                      {!! trans('step.no_pois') !!}
+                  @endforelse
+              </ul>
           </div>
         </div>
 

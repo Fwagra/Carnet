@@ -41,4 +41,5 @@ return [
     'add_img_btn' => "Ajouter des photos",
     'step_title' => "Étape :name",
     'goto_photos' => "Aller aux photos",
+    'pois_block_title' => "Points d'intérêt",
 ];
