@@ -5,7 +5,13 @@
     <?php $i = 1; ?>
     @forelse ($trips as $trip)
         <div class="mdl-card mdl-cell mdl-cell--12-col">
-          <div class="mdl-card__media mdl-color-text--grey-50">
+        <?php
+            $bg = '';
+            if($trip->image_id > 0){
+                $img = App\Photo::find($trip->image_id)->getLight();
+                $bg = 'style="background-image:url('.url($img).');"';
+            }?>
+          <div class="mdl-card__media mdl-color-text--grey-50" {!! $bg !!}>
             <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">
                 @if ($trip->finished)
                     {!! trans('trip.finished_msg') !!}

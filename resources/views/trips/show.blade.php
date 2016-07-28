@@ -3,7 +3,13 @@
 @section('content')
 <div class="content-grid mdl-grid steps-list">
     <div class="mdl-card mdl-cell mdl-cell--12-col trip-head">
-      <div class="mdl-card__media mdl-color-text--grey-50">
+        <?php
+        $bg = '';
+        if($trip->image_id > 0){
+            $img = App\Photo::find($trip->image_id)->getLight();
+            $bg = 'style="background-image:url('.url($img).');"';
+        }?>
+      <div class="mdl-card__media mdl-color-text--grey-50" {!! $bg !!}>
         <h2 class="mdl-card__title-text">
             <a href="{{ route('trip.show', $trip->slug) }}">
                 @if ($trip->finished)
@@ -64,8 +70,14 @@
             <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet {{$first}} {{$last}} {{$final}} step-icon">
                 <div class="pulse"></div>
             </div>
+            <?php
+            $bg = '';
+            if($step->image_id > 0){
+                $img = App\Photo::find($step->image_id)->getLight();
+                $bg = 'style="background-image:url('.url($img).');"';
+            }?>
             <div class="mdl-cell mdl-cell--10-col">
-              <div class="mdl-card__title mdl-card__media">
+              <div class="mdl-card__title mdl-card__media" {!! $bg !!}>
                 <h2 class="mdl-card__title-text"><a href="{{ route('trip.step.show', [$trip->slug, $step->id])}}"><i class="mdl-icon-toggle__label material-icons">{{$step->type}}</i>{{ $step->name }}</a></h2>
               </div>
               <div class="mdl-card__supporting-text">

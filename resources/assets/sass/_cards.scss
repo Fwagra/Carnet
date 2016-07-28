@@ -8,6 +8,10 @@
     .mdl-card__supporting-text{
         width: auto;
     }
+    .mdl-card__media{
+        background-size: cover;
+        background-position:center;
+    }
 }
 .mdl-card.large-card{
     width: 512px;

@@ -67,7 +67,7 @@ class TripController extends Controller
      */
     public function show($trip)
     {
-        $steps = $trip->steps()->orderBy('date', 'desc')->orderBy('id', 'desc')->get();
+        $steps = $trip->steps()->orderBy('date', 'desc')->orderBy('id', 'desc')->with('photos')->get();
         $dates = $this->tripDates($trip);
         $km = $this->tripKms($trip);
         return View::make('trips.show', compact('trip', 'steps', 'dates', 'km'));
