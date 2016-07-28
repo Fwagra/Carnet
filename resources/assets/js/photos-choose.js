@@ -54,6 +54,7 @@ if(dialogPhoto  != null){
         }
         selectPhotos();
         updateHiddenField(jQuery('.hidden-photos'), selectedImages);
+        updateBadgeCount();
     });
 
     /**
@@ -92,11 +93,18 @@ if(dialogPhoto  != null){
         });
     }
 
-
+    /**
+     * Update the hidden field containing the values of the soon te be synced photos
+     */
     function updateHiddenField(field, val) {
         val = JSON.stringify(val);
         val = JSON.parse(val);
         field.val(val);
+    }
+
+    function updateBadgeCount(badge = jQuery('.add-photos-btn')) {
+        var counter = selectedImages.length;
+        badge.attr('data-badge', counter);
     }
 
 }
