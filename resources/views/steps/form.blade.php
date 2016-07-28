@@ -83,11 +83,6 @@
         </div>
     </div>
 
-    <div class="images-add-block">
-        <div class="count-img"></div>
-        <div class="btn add-photos-btn">{!! trans('step.add_img_btn ') !!}</div>
-    </div>
-
     <label for="activate" class="mdl-switch mdl-js-switch">
         <input type="checkbox" id="activate" name="active" value="1" @if (!isset($step) || $step->active == 1)
             checked
@@ -105,5 +100,11 @@
 </div>
 <div class="mdl-card__actions mdl-card--border">
     <div class="section-spacer"></div>
+
+        <div class="images-add-block">
+            <div class="btn add-photos-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored ripple-effet mdl-badge mdl-badge--overlap" data-badge="{{ $count}}">
+                <i class="material-icons">image</i>{!! trans('step.add_img_btn') !!}
+            </div>
+        </div>
     {!! Form::submit(trans('step.submit_btn'), ['class' => "mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect mdl-button--primary"]) !!}
 </div>

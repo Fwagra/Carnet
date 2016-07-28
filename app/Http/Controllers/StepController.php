@@ -44,8 +44,9 @@ class StepController extends Controller
     {
         $photosJSON = [];
         $fieldPhotos = serialize($photosJSON);
+        $count = 0;
 
-        return View::make('steps.create', compact('trip',  'fieldPhotos'));
+        return View::make('steps.create', compact('trip',  'fieldPhotos', 'count'));
     }
 
     /**
@@ -123,11 +124,11 @@ class StepController extends Controller
                 $photosJSON[] = $photo->id;
             }
         }
-
+        $count = count($photos);
         $fieldPhotos = serialize($photosJSON);
         $photosJSON = json_encode($photosJSON);
 
-        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons','photosJSON', 'fieldPhotos'));
+        return View::make('steps.edit', compact('trip', 'step', 'pois', 'pois_icons','photosJSON', 'fieldPhotos', 'count'));
     }
 
     /**
