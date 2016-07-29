@@ -79,7 +79,7 @@
           <div class="mdl-card__supporting-text comments" id="comments">
              <div class="mdl-card__title"><h4>{!! trans('step.comment_title') !!}</h4   ></div>
              <div class="mdl-card__supporting-text">
-                  @forelse ($step->comments as $comment)
+                  @forelse ($step->comments()->where('active', '=', 1)->get() as $comment)
                       <div class="comment">
                           <div class="comment__text">
                               {!! nl2br($comment->message) !!}
@@ -113,6 +113,15 @@
                           @if ($errors->has('message'))
                               <span class="mdl-textfield__error">
                                   <strong>{{ $errors->first('message') }}</strong>
+                              </span>
+                          @endif
+
+                      </div>
+                      <div class="captcha">
+                          {!! app('captcha')->display(); !!}
+                          @if ($errors->has('g-recaptcha-response'))
+                              <span class="error">
+                                  <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                               </span>
                           @endif
                       </div>

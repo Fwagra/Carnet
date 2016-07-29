@@ -142,7 +142,8 @@ return [
         'size'                  => 'Taille',
         'type'                  => 'Moyen de transport',
         'km'                    => 'Kilomètres parcourus',
-        'md_value'                    => 'Description',
+        'md_value'              => 'Description',
+        'g-recaptcha-response'  => 'Captcha',
     ],
 
 ];

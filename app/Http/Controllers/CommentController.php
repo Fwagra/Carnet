@@ -36,11 +36,12 @@ class CommentController extends Controller
         $this->validate($request,[
             'name' => 'required|max:255',
             'message' => 'required|max:1500',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
-        $comment = Comment::create($request->all());
+        $comment = Comment::create($request->except('g-recaptcha-response'));
         $comment->step_id = $step->id;
         $comment->save();
-        
+
         Toastr::success(trans('step.comment_success_msg'));
         return Redirect::to(URL::previous() . "#comments");
     }
