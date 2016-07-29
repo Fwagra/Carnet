@@ -24,6 +24,7 @@ Route::resource('photo', 'PhotoController');
 Route::post('trip/{trip}/step/{step}/comment', ['as' => 'trip.step.comment.store', 'uses' => "CommentController@store"]);
 Route::get('comment/{comment}', ['as' => 'comment.edit', 'uses' => "CommentController@edit"]);
 Route::put('comment/{comment}', ['as' => 'comment.update', 'uses' => "CommentController@update"]);
+Route::delete('comment/{comment}', ['as' => 'comment.delete', 'uses' => "CommentController@destroy"]);
 Route::model('trip', 'App\Trip');
 Route::model('step', 'App\Step');
 Route::model('photo', 'App\Photo');

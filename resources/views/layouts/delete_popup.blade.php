@@ -23,6 +23,10 @@
         step:{
             title:"{!! trans('step.deletion_confirmation') !!}",
             msg:"{!! trans('step.delete_msg') !!}"
+        },
+        comment:{
+            title:"{!! trans('comment.deletion_confirmation') !!}",
+            msg:"{!! trans('comment.delete_msg') !!}"
         }
     };
 </script>
