@@ -27,11 +27,7 @@ class PhotoController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => []]);
-    }
-
+    
     public function __construct()
     {
         if(!File::isDirectory($this->pathImages))
@@ -40,6 +36,8 @@ class PhotoController extends Controller
             File::makeDirectory($this->pathImagesLight,  0775, true);
         if(!File::isDirectory($this->pathImagesThumb))
             File::makeDirectory($this->pathImagesThumb,  0775, true);
+
+        $this->middleware('auth', ['except' => []]);
     }
     /**
      * Display a listing of the resource.

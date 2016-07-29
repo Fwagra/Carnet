@@ -29,7 +29,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments = Comment::orderBy('id', 'desc')->paginate(3);
+        $comments = Comment::orderBy('id', 'desc')->paginate(25);
         return View::make('comments.index', compact('comments'));
     }
 
@@ -59,12 +59,12 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Comment $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($comment)
     {
-        //
+        return View::make('comments.edit', compact('comment'));
     }
 
     /**
@@ -80,7 +80,13 @@ class CommentController extends Controller
             'name' => 'required|max:255',
             'message' => 'required|max:1500',
         ]);
-        $comment = Comment::update($request->all());
+        $comment->update($request->all());
+        $active = (!empty($request->get('active'))) ? '1' : '0';
+        $comment->active = $active;
+        $comment->save();
+
+        Toastr::success(trans('comment.update_success_msg'));
+        return Redirect::route('comment.index');
     }
 
     /**

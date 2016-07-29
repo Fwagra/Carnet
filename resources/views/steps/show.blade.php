@@ -132,7 +132,7 @@
               <div class="mdl-card__menu">
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect goto">
                     <a class="goto-link" href="#comments"></a>
-                    <?php $badge = ($step->comments->count() > 0)? "data-badge=".$step->comments->count() : ''; ?>
+                    <?php $badge = ($step->comments()->where('active','=', '1')->count() > 0)? "data-badge=".$step->comments()->where('active', '=','1')->count() : ''; ?>
                   <i class="material-icons mdl-badge" {{ $badge }}>mode_comment</i>
                 </button>
               </div>

@@ -13,17 +13,21 @@
                  <th class="mdl-data-table__cell--non-numeric">{!! trans('comment.date') !!}</th>
                  <th class="mdl-data-table__cell--non-numeric">{!! trans('comment.name') !!}</th>
                  <th class="mdl-data-table__cell--non-numeric">{!! trans('comment.message') !!}</th>
+                 <th class="mdl-data-table__cell--non-numeric">{!! trans('comment.step') !!}</th>
                  <th class="mdl-data-table__cell--non-numeric"></th>
                </tr>
             </thead>
             <tbody>
                 @forelse ($comments as $comment)
                     <?php $icon = ($comment->active == 1)? 'visibility' : 'visibility_off'; ?>
-                    <tr>
+                    <tr class="goto">
                       <td class="mdl-data-table__cell--non-numeric">{{$comment->created_at->format('d-m-Y')}}</td>
                       <td class="mdl-data-table__cell--non-numeric">{{ $comment->name }}</td>
                       <td class="mdl-data-table__cell--non-numeric">{{  str_limit($comment->message, 75) }}</td>
-                      <td class="mdl-data-table__cell--non-numeric"><i class="material-icons">{{$icon}}</i></td>
+                      <td class="mdl-data-table__cell--non-numeric">{{ $comment->step->name }}</td>
+                      <td class="mdl-data-table__cell--non-numeric"><i class="material-icons">{{$icon}}</i>
+                          <a href="{{ route('comment.edit',[$comment->id]) }}" class="goto-link"></a>
+                      </td>
                     </tr>
                 @empty
                     <tr>
