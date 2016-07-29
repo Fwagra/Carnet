@@ -7,10 +7,21 @@ use App\Comment;
 use Redirect;
 use URL;
 use Toastr;
+use View;
 use App\Http\Requests;
 
 class CommentController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['store']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,10 +29,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-
+        $comments = Comment::orderBy('id', 'desc')->paginate(3);
+        return View::make('comments.index', compact('comments'));
     }
-
-
 
     /**
      * Store a newly created resource in storage.

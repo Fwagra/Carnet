@@ -324,3 +324,17 @@ dialog .pager{
         }
     }
 }
+
+.pagination{
+    li{
+        display: inline-block;
+        margin-right: .3rem;
+    }
+    li.disabled,
+    li.active,
+    li a{
+        padding: 1rem;
+        text-decoration: none;
+        background: #FFF;
+    }
+}

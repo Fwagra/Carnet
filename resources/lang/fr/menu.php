@@ -15,4 +15,5 @@ return [
     'new_trip' => 'Ajouter un voyage',
     'home' => 'Accueil',
     'img_management' => 'Gérer les photos',
+    'comment_management' => 'Commentaires',
 ];

@@ -22,6 +22,16 @@ class PhotoController extends Controller
     protected $pathImagesThumb = 'uploads/photos/thumb/';
 
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => []]);
+    }
+
     public function __construct()
     {
         if(!File::isDirectory($this->pathImages))

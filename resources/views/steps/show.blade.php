@@ -130,8 +130,10 @@
                   {{ Form::close() }}
               </div>
               <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                  <i class="material-icons">mode_comment</i>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect goto">
+                    <a class="goto-link" href="#comments"></a>
+                    <?php $badge = ($step->comments->count() > 0)? "data-badge=".$step->comments->count() : ''; ?>
+                  <i class="material-icons mdl-badge" {{ $badge }}>mode_comment</i>
                 </button>
               </div>
           </div>

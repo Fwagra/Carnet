@@ -19,6 +19,7 @@ Route::resource('trip', 'TripController');
 Route::resource('trip.step', 'StepController');
 Route::get('photo/listing', ['as' => 'photo.listing', 'uses' => "PhotoController@listPopup"]);
 Route::get('photo/addPopup', ['as' => 'photo.addform', 'uses' => "PhotoController@addForm"]);
+Route::get('comments', ['as' => 'comment.index', 'uses' => "CommentController@index"]);
 Route::resource('photo', 'PhotoController');
 Route::post('trip/{trip}/step/{step}/comment', ['as' => 'trip.step.comment.store', 'uses' => "CommentController@store"]);
 Route::model('trip', 'App\Trip');
