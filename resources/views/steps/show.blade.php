@@ -68,7 +68,7 @@
             @forelse ($step->photos as $photo)
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone">
                     <a class="fluidbox-img" href="{{ url($photo->getFull()) }}">
-                        <img src="{{ url($photo->getThumb())}}" alt="" />
+                        <img title="{{$photo->name}}" src="{{ url($photo->getThumb()) }}" alt="{{ $photo->description }}" />
                     </a>
                 </div>
             @empty
@@ -84,6 +84,8 @@
     </div>
 @endsection
 @section('footer')
-    @include('layouts.step_images_popup')
-    @include('layouts.pois_icons_popup')
+    <div id="photo-caption" class="mdl-grid content-grid">
+        <div class="title"></div>
+        <div class="caption"></div>
+    </div>
 @endsection
