@@ -38,16 +38,18 @@
           </div>
           <div class="mdl-card__supporting-text">
               <ul class="mdl-list">
-                  @forelse ($step->pois as $key => $poi)
-                      <li class="mdl-list__item">
-                        <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon">{{$step->pois_icon[$key]}}</i>
-                           {{ $poi }}
-                        </span>
-                      </li>
-                  @empty
-                      {!! trans('step.no_pois') !!}
-                  @endforelse
+                  @if (!empty($step->pois[0]))
+                      @foreach ($step->pois as $key => $poi)
+                          <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-icon">{{$step->pois_icon[$key]}}</i>
+                               {{ $poi }}
+                            </span>
+                          </li>
+                      @endforeach
+                  @else
+                     {!! trans('step.no_pois') !!}
+                  @endif
               </ul>
           </div>
         </div>
@@ -61,6 +63,17 @@
               <div class="content-text">
                   {!! $step->html_value !!}
               </div>
+          </div>
+          <div id="photos" class="mdl-card__supporting-text img-block mdl-card--border mdl-grid">
+            @forelse ($step->photos as $photo)
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone">
+                    <a class="fluidbox-img" href="{{ url($photo->getFull()) }}">
+                        <img src="{{ url($photo->getThumb())}}" alt="" />
+                    </a>
+                </div>
+            @empty
+
+            @endforelse
           </div>
           <div class="mdl-card__menu">
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">

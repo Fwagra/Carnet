@@ -164,6 +164,9 @@
             margin: 0 auto;
         }
     }
+    .img-block{
+        overflow: visible;
+    }
     @media screen and (max-device-width: 479px) {
         .desc-block{
             .content-text{

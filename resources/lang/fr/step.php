@@ -42,4 +42,5 @@ return [
     'step_title' => "Étape :name",
     'goto_photos' => "Aller aux photos",
     'pois_block_title' => "Points d'intérêt",
+    'no_pois' => "Aucun point d'intérêt visité.",
 ];
