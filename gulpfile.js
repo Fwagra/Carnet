@@ -19,7 +19,7 @@ elixir(function(mix) {
     mix.copy('node_modules/dropzone/dist/min/basic.min.css','resources/assets/sass/modules/basic.scss');
     mix.copy('node_modules/dropzone/dist/min/dropzone.min.css','resources/assets/sass/modules/dropzone.scss');
     mix.copy('node_modules/fluidbox/dist/css/fluidbox.min.css', 'resources/assets/sass/modules/fluidbox.scss'),
-    mix.copy('node_modules/dialog-polyfill/dialog-polyfill.css','resources/assets/sass/modules/dialog-polyfill.css');
+    mix.copy('node_modules/dialog-polyfill/dialog-polyfill.css','public/css/dialog-polyfill.css');
     mix.copy('node_modules/dialog-polyfill/dialog-polyfill.js', 'public/js/polyfill.js');
 
     mix.sass([

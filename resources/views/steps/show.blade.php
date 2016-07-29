@@ -67,13 +67,17 @@
           <div id="photos" class="mdl-card__supporting-text img-block mdl-card--border mdl-grid">
             @forelse ($step->photos as $photo)
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone">
-                    <a class="fluidbox-img" href="{{ url($photo->getFull()) }}">
-                        <img title="{{$photo->name}}" src="{{ url($photo->getThumb()) }}" alt="{{ $photo->description }}" />
+                    <a class="fluidbox-img images" href="{{ url($photo->getFull()) }}">
+                        <img class="thumb" title="{{$photo->name}}" src="{{ url($photo->getThumb()) }}" alt="{{ $photo->description }}" />
                     </a>
                 </div>
             @empty
 
             @endforelse
+          </div>
+          {{-- Comments block --}}
+          <div class="mdl-card__supporting-text comments">
+             <div class="mdl-card__title">{!! trans('step.comment_title') !!}</div>
           </div>
           <div class="mdl-card__menu">
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">

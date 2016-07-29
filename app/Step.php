@@ -41,6 +41,14 @@ class Step extends Model
     }
 
     /**
+     * Get the comments  of the step.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    /**
      * Scope a query to only include final steps.
      *
      * @return \Illuminate\Database\Eloquent\Builder
