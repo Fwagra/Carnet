@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Comment;
+use Redirect;
+use URL;
+use Toastr;
 use App\Http\Requests;
 
 class CommentController extends Controller
@@ -15,7 +18,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
 
@@ -23,16 +26,23 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  \App\Trip  $trip
+     * @param  \App\Step  $step
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $trip, $step)
     {
         $this->validate($request,[
             'name' => 'required|max:255',
             'message' => 'required|max:1500',
-        ])
+        ]);
         $comment = Comment::create($request->all());
+        $comment->step_id = $step->id;
+        $comment->save();
+        
+        Toastr::success(trans('step.comment_success_msg'));
+        return Redirect::to(URL::previous() . "#comments");
     }
 
     /**
@@ -53,9 +63,13 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $comment)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required|max:255',
+            'message' => 'required|max:1500',
+        ]);
+        $comment = Comment::update($request->all());
     }
 
     /**

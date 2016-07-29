@@ -76,13 +76,55 @@
             @endforelse
           </div>
           {{-- Comments block --}}
-          <div class="mdl-card__supporting-text comments">
-             <div class="mdl-card__title">{!! trans('step.comment_title') !!}</div>
-          </div>
-          <div class="mdl-card__menu">
-            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-              <i class="material-icons">mode_comment</i>
-            </button>
+          <div class="mdl-card__supporting-text comments" id="comments">
+             <div class="mdl-card__title"><h4>{!! trans('step.comment_title') !!}</h4   ></div>
+             <div class="mdl-card__supporting-text">
+                  @forelse ($step->comments as $comment)
+                      <div class="comment">
+                          <div class="comment__text">
+                              {!! nl2br($comment->message) !!}
+                          </div>
+                          <div class="comment__footer">
+                              <div class="comment__author">
+                                  <div class="name">{{ $comment->name }}</div>
+                                  <div class="date">{{ $comment->created_at->format('d-m-Y') }}</div>
+                              </div>
+                          </div>
+                      </div>
+                  @empty
+                      {!! trans('step.no_comments') !!}
+                  @endforelse
+              </div>
+              <div class="mdl-text__actions mdl-card--border">
+                  <h4>{!! trans('step.add_comment_title') !!}</h4>
+                  {{ Form::open(['url' => route('trip.step.comment.store', [$trip->slug, $step->id]), 'method' => 'POST']) }}
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('name') ? ' is-invalid' : '' }}">
+                          {!! Form::text('name',null, ['class' => 'mdl-textfield__input']) !!}
+                          {!! Form::label('name', trans('step.comment_name'), ['class' => "mdl-textfield__label"])!!}
+                          @if ($errors->has('name'))
+                              <span class="mdl-textfield__error">
+                                  <strong>{{ $errors->first('name') }}</strong>
+                              </span>
+                          @endif
+                      </div>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('message') ? ' is-invalid' : '' }}">
+                          {!! Form::textarea('message',null, ['class' => 'mdl-textfield__input']) !!}
+                          {!! Form::label('message', trans('step.comment_message'), ['class' => "mdl-textfield__label"])!!}
+                          @if ($errors->has('message'))
+                              <span class="mdl-textfield__error">
+                                  <strong>{{ $errors->first('message') }}</strong>
+                              </span>
+                          @endif
+                      </div>
+                      {!! Form::submit(trans('step.submit_comment_btn'), ['class' => "mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect mdl-button--primary"]) !!}
+
+                  {{ Form::close() }}
+              </div>
+              <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                  <i class="material-icons">mode_comment</i>
+                </button>
+              </div>
           </div>
         </div>
     </div>

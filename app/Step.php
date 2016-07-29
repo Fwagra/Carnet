@@ -102,17 +102,6 @@ class Step extends Model
 
 
     /**
-     * Return the number of photos attached to the step
-     * @return int $photos
-     */
-    public function nbPhotos()
-    {
-        $photos = $this->photos;
-        return count($photos);
-    }
-
-
-    /**
     * The photos that belong to the step.
     */
    public function photos()

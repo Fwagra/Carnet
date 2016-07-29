@@ -64,7 +64,7 @@ class Trip extends Model
         $steps = $this->steps()->with('photos')->get();
         $count = 0;
             foreach ($steps as $key => $step) {
-                $count += $step->nbPhotos();
+                $count += $step->photos->count();
             }
         return $count;
     }

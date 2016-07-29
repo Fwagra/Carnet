@@ -167,9 +167,53 @@
     .img-block{
         overflow: visible;
     }
+    .comments{
+        &>div{
+            max-width: 70%;
+            margin: 0 auto;
+        }
+        background: #EEE;
+        .mdl-textfield
+        {
+            display: block;
+            width: 100%;
+        }
+        .mdl-button{
+            float: right;
+        }
+        .comment__text{
+            margin-bottom: .5rem;
+        }
+        .comment__footer{
+            div{
+                display: inline-block;
+            }
+            .comment__author{
+                float: right;
+            }
+            .name{
+                font-weight: bold;
+                &>:after{
+                    content:' - ';
+                }
+            }
+        }
+        .comment{
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #DDD;
+            overflow: hidden;
+        }
+    }
     @media screen and (max-device-width: 479px) {
         .desc-block{
             .content-text{
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+        .comments{
+            &>div{
                 max-width: 90%;
                 margin: 0 auto;
             }

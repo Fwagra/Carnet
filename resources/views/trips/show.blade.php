@@ -93,9 +93,9 @@
                               <i class="material-icons icon-align">place</i><span class="km icon-align">{{ $step->nbPois() }} {!! trans_choice('step.pois_nb', $step->nbPois()) !!}</span>
                           </div>
                       @endif
-                      @if ($step->nbPhotos() > 0)
+                      @if ($step->photos->count() > 0)
                           <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                              <i class="material-icons icon-align">image</i><span class="km icon-align">{{ $step->nbPhotos() }} {!! trans_choice('step.photos_nb', $step->nbPhotos()) !!}</span>
+                              <i class="material-icons icon-align">image</i><span class="km icon-align">{{ $step->photos->count() }} {!! trans_choice('step.photos_nb', $step->photos->count()) !!}</span>
                           </div>
                       @endif
                   </div>

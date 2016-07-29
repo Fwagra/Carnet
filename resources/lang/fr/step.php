@@ -43,4 +43,11 @@ return [
     'goto_photos' => "Aller aux photos",
     'pois_block_title' => "Points d'intérêt",
     'no_pois' => "Aucun point d'intérêt visité.",
+    'no_comments' => "Aucun commentaire",
+    'comment_title' => "Commentaires",
+    'comment_name' => "Votre nom",
+    'comment_message' => "Votre message",
+    'submit_comment_btn' => "Envoyer un soutien !",
+    'comment_success_msg' => "Votre message a bien été envoyé !",
+    'add_comment_title' => "Ajouter un commentaire",
 ];
