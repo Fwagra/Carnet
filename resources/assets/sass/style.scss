@@ -325,6 +325,18 @@ dialog .pager{
             padding: 0;
         }
     }
+    .photo-choose-dialog .trigger-add-photos{
+        margin: 2rem 0;
+        float: none;
+        width: 100%;
+    }
+    .mdl-text__actions .mdl-button{
+        width: 100%;
+    }
+    .show-step .comments .captcha{
+        float: none;
+        max-width: 100%;
+    }
 }
 
 .pagination{

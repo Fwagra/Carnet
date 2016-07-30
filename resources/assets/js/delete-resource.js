@@ -38,7 +38,7 @@ deleteBtn.click(function(event) {
 });
 
 // Check the keyword on each keyup
-jQuery('.delete-input', dialog).keyup(function(event) {
+jQuery(document).on('keyup', 'dialog .delete-input', function(event) {
     var keyword = jQuery(this).data('keyword');
     if(jQuery(this).val() == keyword ){
         deleteBtn.removeAttr('disabled');
