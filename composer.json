@@ -11,8 +11,7 @@
         "laravelcollective/html": "5.2.*",
         "vtalbot/markdown": "2.0",
         "intervention/image": "^2.3",
-        "anhskohbo/no-captcha": "2.*",
-        "barryvdh/laravel-debugbar": "^2.2"
+        "anhskohbo/no-captcha": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

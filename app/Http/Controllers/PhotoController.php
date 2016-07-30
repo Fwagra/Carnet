@@ -27,7 +27,7 @@ class PhotoController extends Controller
      *
      * @return void
      */
-    
+
     public function __construct()
     {
         if(!File::isDirectory($this->pathImages))

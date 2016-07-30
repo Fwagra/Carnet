@@ -6,6 +6,7 @@
 @import "animations";
 
 
+
 .mdl-grid{
     max-width: 1024px;
 }
@@ -13,7 +14,8 @@
     background-color: none;
 }
 .mdl-layout__container{
-    background: grey;
+    background: url('/img/bg.jpg');
+    background-size: cover;
 }
 .mdl-layout__drawer-button, .mdl-layout__drawer{
    left: initial;
@@ -340,4 +342,24 @@ dialog .pager{
 }
 .edit-comment .delete_resource{
     margin-right: 1rem;
+}
+.index-comments{
+    tbody tr{
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-device-width:1024px) {
+    .mdl-layout__drawer-button{
+        color: #FFF;
+    }
+}
+.mdl-badge.comments-icon:after{
+    top: -3px;
+    right: -29px;
+}
+#mydropzone{
+    width: 100%;
+    border: 4px dashed #607D8B;
+    background: #CFD8DC;
 }

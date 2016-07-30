@@ -159,7 +159,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+        // Barryvdh\Debugbar\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
     ],
 
@@ -212,7 +212,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Markdown' => VTalbot\Markdown\Facades\Markdown::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

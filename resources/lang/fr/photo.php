@@ -28,4 +28,5 @@ return [
     'dropzone_message' => "Cliquez ici ou faites glisser vos images dans le cadre",
     'change_featured_photo' => "Modifier la photo de tête",
     'add_featured_photo' => "Ajouter une  photo de tête",
+    'intro_text' => "Pour ajouter des photos, cliquez dans l'encadré ci-dessous ou faites glisser des photos dans cette zone.",
 ];

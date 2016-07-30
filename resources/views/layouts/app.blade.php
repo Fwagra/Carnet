@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="{{ env('APP_LANG', 'en')}}">
 <head>
     <meta charset="UTF-8">
