@@ -9,11 +9,11 @@ return [
     |
     */
 
-    'title' => 'Navigation',
+    'comment_management' => 'Commentaires',
+    'home' => 'Accueil',
+    'img_management' => 'Gérer les photos',
     'login' => 'Connexion',
     'logout' => 'Déconnexion',
     'new_trip' => 'Ajouter un voyage',
-    'home' => 'Accueil',
-    'img_management' => 'Gérer les photos',
-    'comment_management' => 'Commentaires',
+    'title' => 'Navigation',
 ];
