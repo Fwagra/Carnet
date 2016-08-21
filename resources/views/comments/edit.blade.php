@@ -22,7 +22,7 @@
                       </div>
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ $errors->has('message') ? ' is-invalid' : '' }}">
                           {!! Form::textarea('message',null, ['class' => 'mdl-textfield__input']) !!}
-                          {!! Form::label('message', trans('comment.message_form'), ['class' => "mdl-textfield__label"])!!}
+                          {!! Form::label('message', trans('comment.message'), ['class' => "mdl-textfield__label"])!!}
                           @if ($errors->has('message'))
                               <span class="mdl-textfield__error">
                                   <strong>{{ $errors->first('message') }}</strong>
