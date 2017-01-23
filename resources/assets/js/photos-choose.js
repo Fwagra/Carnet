@@ -80,7 +80,8 @@ if(dialogPhoto  != null){
     /**
      * Load the photos
      */
-    function loadPhotos(url = popupConfig.url){
+    function loadPhotos(url){
+        url = url || popupConfig.url;
         content.load(url, function(){
             if(jQuery(dialogPhoto).hasClass('one-photo')){
                 selectFeatured(featured);
@@ -106,7 +107,8 @@ if(dialogPhoto  != null){
     /**
      * Add the border around the selected images
      */
-    function selectPhotos(images = selectedImages) {
+    function selectPhotos(images) {
+        images = images || selectedImages;
         jQuery('.photo-element', content).each(function(index, el) {
             var photoId = jQuery(el).data('id');
             if(images.indexOf(photoId) != -1){
@@ -143,7 +145,8 @@ if(dialogPhoto  != null){
     }
 
 
-    function updateBadgeCount(badge = jQuery('.add-photos-btn')) {
+    function updateBadgeCount(badge) {
+        badge = badge || jQuery('.add-photos-btn');
         var counter = selectedImages.length;
         badge.attr('data-badge', counter);
     }
