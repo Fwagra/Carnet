@@ -20,10 +20,10 @@ class TripController extends Controller
         $this->middleware('web');
         $this->middleware('auth', ['except' => ["index", "show"]]);
     }
+
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -34,7 +34,7 @@ class TripController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -62,8 +62,8 @@ class TripController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  App\Trip $trip
-     * @return \Illuminate\Http\Response
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Contracts\View\View
      */
     public function show($trip)
     {
@@ -76,7 +76,7 @@ class TripController extends Controller
     /**
      * Return dates informations of a trip
      *
-     * @param App\Trip $trip
+     * @param \App\Trip $trip
      * @return string $dates
      */
     public function tripDates($trip)
@@ -100,7 +100,7 @@ class TripController extends Controller
     /**
      * Return the total kms of a trip
      *
-     * @param App\Trip $trip
+     * @param \App\Trip $trip
      * @return string $dates
      */
     public function tripKms($trip)
@@ -116,8 +116,8 @@ class TripController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  App\Trip $trip
-     * @return \Illuminate\Http\Response
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit($trip)
     {
@@ -128,7 +128,7 @@ class TripController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Trip $trip
+     * @param  \App\Trip $trip
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $trip)
@@ -146,7 +146,7 @@ class TripController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  App\Trip $trip
+     * @param  \App\Trip $trip
      * @return \Illuminate\Http\Response
      */
     public function destroy($trip)

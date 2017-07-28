@@ -12,6 +12,8 @@
         "vtalbot/markdown": "2.0",
         "intervention/image": "^2.3",
         "anhskohbo/no-captcha": "2.*"
+        "barryvdh/laravel-debugbar": "^2.2",
+        "barryvdh/laravel-ide-helper": "^2.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

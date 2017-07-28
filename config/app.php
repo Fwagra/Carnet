@@ -159,8 +159,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        // Barryvdh\Debugbar\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        //Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 
     /*

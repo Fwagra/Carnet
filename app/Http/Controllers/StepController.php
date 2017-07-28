@@ -38,8 +38,8 @@ class StepController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @param  App\Trip $trip
-     * @return \Illuminate\Http\Response
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Contracts\View\View
      */
     public function create($trip)
     {
@@ -54,7 +54,7 @@ class StepController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Trip $trip
+     * @param  \App\Trip $trip
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, $trip)
@@ -97,9 +97,9 @@ class StepController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  App\Trip $trip
-     * @param  App\Step $step
-     * @return \Illuminate\Http\Response
+     * @param  \App\Trip $trip
+     * @param  \App\Step $step
+     * @return \Illuminate\Contracts\View\View
      */
     public function show($trip, $step)
     {
@@ -110,9 +110,9 @@ class StepController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  App\Trip $trip
-     * @param  App\Step $step
-     * @return \Illuminate\Http\Response
+     * @param  \App\Trip $trip
+     * @param  \App\Step $step
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit($trip, $step)
     {
@@ -137,8 +137,8 @@ class StepController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Trip $trip
-     * @param  App\Step $step
+     * @param  \App\Trip $trip
+     * @param  \App\Step $step
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $trip, $step)
@@ -180,8 +180,8 @@ class StepController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  App\Trip $trip
-     * @param  App\Step $step
+     * @param  \App\Trip $trip
+     * @param  \App\Step $step
      * @return \Illuminate\Http\Response
      */
     public function destroy($trip, $step)
@@ -193,6 +193,7 @@ class StepController extends Controller
 
     /**
      * Reset all the already existing final steps
+     * @param \App\Trip $trip
      */
     public function resetOtherFinalSteps($trip)
     {
