@@ -34,6 +34,10 @@
 .steps-list{
     .mdl-card{
         overflow: visible;
+      background: none;
+      .mdl-card__supporting-text{
+        background: #FFF;
+      }
     }
     .step-wrapper{
         padding: 0;
@@ -71,15 +75,17 @@
     }
     .step-icon{
         margin: 0;
-        background: #C5E1A5;
+        //background: #C5E1A5;
         position: relative;
         &:before{
             position: absolute;
             content: '';
-            height: 100%;
+            //height: 100%;
             width: 1.2rem;
             background: #FFCC80;
             left: calc(50% - 0.6rem);
+            bottom:-16px;
+            top: 0;
         }
         &:after{
             position: absolute;
@@ -95,14 +101,16 @@
     }
     .first:before{
         height: 50%;
-        bottom: 0;
+        bottom: -16px;
+        top:auto;
     }
     .first:after{
-        background: #FFA726;
+        background: #FF6C4D;;
     }
     .last:before{
         height: 50%;
         top: 0;
+        bottom:auto;
     }
     .last:after{
         background: #9CCC65;
