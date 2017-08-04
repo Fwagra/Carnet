@@ -13,7 +13,8 @@
                 $bg = 'style="background-image:url('.url($img).');"';
             }?>
           <div class="mdl-card__media mdl-color-text--grey-50" {!! $bg !!}>
-            <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">
+              <a class="absolute-link" href="{{ action('TripController@destroy', $trip->slug)}}"></a>
+              <h2 class="mdl-card__title-text"><a href="{{ route('trip.show', $trip->slug) }}">
                 @if ($trip->finished)
                     {!! trans('trip.finished_msg') !!}
                 @endif
