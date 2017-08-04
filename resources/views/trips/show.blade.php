@@ -22,23 +22,23 @@
       <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
           <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $dates }}</span>
+                <i aria-hidden="true" class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $dates }}</span>
             </div>
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                <i class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $km }} {!! trans('step.km_traveled') !!}</span>
+                <i aria-hidden="true" class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $km }} {!! trans('step.km_traveled') !!}</span>
             </div>
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                <i class="material-icons icon-align">place</i><span class="place icon-align">{{ $trip->nbPois() }} {!! trans_choice('step.places_visited', $trip->nbPois()) !!}</span>
+                <i aria-hidden="true" class="material-icons icon-align">place</i><span class="place icon-align">{{ $trip->nbPois() }} {!! trans_choice('step.places_visited', $trip->nbPois()) !!}</span>
             </div>
             <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                <i class="material-icons icon-align">image</i><span class="place icon-align">{{ $trip->nbPhotos() }} {!! trans_choice('step.photos_nb', $trip->nbPhotos()) !!}</span>
+                <i aria-hidden="true" class="material-icons icon-align">image</i><span class="place icon-align">{{ $trip->nbPhotos() }} {!! trans_choice('step.photos_nb', $trip->nbPhotos()) !!}</span>
             </div>
           </div>
       </div>
       @if (Auth::check())
           <div class="mdl-card__menu">
               <button id="menu-1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
-                <i class="material-icons">more_vert</i>
+                <i aria-hidden="true" class="material-icons">more_vert</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-1">
                 <li class="mdl-menu__item goto">
@@ -55,7 +55,7 @@
       {{ Form::close() }}
       <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-step goto">
           <a class="goto-link" href="{{route('trip.step.create', [$trip->slug])}}"></a>
-          <i class="material-icons">add</i>
+          <i aria-hidden="true" class="material-icons">add</i>
       </button>
   @endif
     </div>
@@ -83,19 +83,19 @@
               <div class="mdl-card__supporting-text">
                   <div class="mdl-grid">
                       <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                          <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
+                          <i aria-hidden="true" class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
                       </div>
                       <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                          <i class="material-icons icon-align">flag</i><span class="km icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
+                          <i aria-hidden="true" class="material-icons icon-align">flag</i><span class="km icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
                       </div>
                       @if ($step->nbPois() > 0)
                           <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                              <i class="material-icons icon-align">place</i><span class="km icon-align">{{ $step->nbPois() }} {!! trans_choice('step.pois_nb', $step->nbPois()) !!}</span>
+                              <i aria-hidden="true" class="material-icons icon-align">place</i><span class="km icon-align">{{ $step->nbPois() }} {!! trans_choice('step.pois_nb', $step->nbPois()) !!}</span>
                           </div>
                       @endif
                       @if ($step->photos->count() > 0)
                           <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                              <i class="material-icons icon-align">image</i><span class="km icon-align">{{ $step->photos->count() }} {!! trans_choice('step.photos_nb', $step->photos->count()) !!}</span>
+                              <i aria-hidden="true" class="material-icons icon-align">image</i><span class="km icon-align">{{ $step->photos->count() }} {!! trans_choice('step.photos_nb', $step->photos->count()) !!}</span>
                           </div>
                       @endif
                   </div>
@@ -103,7 +103,7 @@
               @if (Auth::check())
                   <div class="mdl-card__menu">
                       <button id="delete-{{$key}}" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon menu-top-right">
-                        <i class="material-icons">more_vert</i>
+                        <i aria-hidden="true" class="material-icons">more_vert</i>
                     </button>
                       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="delete-{{$key}}">
                         <li class="mdl-menu__item goto">

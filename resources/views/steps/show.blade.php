@@ -13,10 +13,10 @@
           <div class="mdl-card__supporting-text">
              <div class="mdl-grid">
                   <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                     <i class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
+                     <i aria-hidden="true" class="material-icons icon-align">date_range</i><span class="date icon-align">{{ $step->date->format('d-m-Y') }}</span>
                  </div>
                  <div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-desktop">
-                     <i class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
+                     <i aria-hidden="true" class="material-icons icon-align">flag</i><span class="flag icon-align">{{ $step->km }} {!! trans('step.km_traveled') !!}</span>
                  </div>
                  <div class="section-spacer"></div>
                  <a href="#photos" class="mdl-button mdl-js-button  mdl-button--accent ">{!! trans('step.goto_photos') !!}</a>
@@ -25,7 +25,7 @@
           @if (Auth::check())
               <div class="mdl-card__menu">
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect goto">
-                  <i class="material-icons md-light">edit_mode</i>
+                  <i aria-hidden="true" class="material-icons md-light">edit_mode</i>
                   <a class="goto-link" href="{{ route('trip.step.edit', [$trip->slug, $step->id])}}"></a>
                 </button>
               </div>
@@ -34,7 +34,7 @@
         {{-- Points of interest block --}}
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col pois-block">
           <div class="mdl-card__title  mdl-card--expand">
-              <h4><i class="material-icons icon-align">place</i> {!! trans('step.pois_block_title') !!}</h4>
+              <h4><i aria-hidden="true" class="material-icons icon-align">place</i> {!! trans('step.pois_block_title') !!}</h4>
           </div>
           <div class="mdl-card__supporting-text">
               <ul class="mdl-list">
@@ -42,7 +42,7 @@
                       @foreach ($step->pois as $key => $poi)
                           <li class="mdl-list__item">
                             <span class="mdl-list__item-primary-content">
-                                <i class="material-icons mdl-list__item-icon">{{$step->pois_icon[$key]}}</i>
+                                <i aria-hidden="true" class="material-icons mdl-list__item-icon">{{$step->pois_icon[$key]}}</i>
                                {{ $poi }}
                             </span>
                           </li>
@@ -133,7 +133,7 @@
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect goto">
                     <a class="goto-link" href="#comments"></a>
                     <?php $badge = ($step->comments()->where('active','=', '1')->count() > 0)? "data-badge=".$step->comments()->where('active', '=','1')->count() : ''; ?>
-                  <i class="material-icons mdl-badge" {{ $badge }}>mode_comment</i>
+                  <i aria-hidden="true" class="material-icons mdl-badge" {{ $badge }}>mode_comment</i>
                 </button>
               </div>
           </div>
