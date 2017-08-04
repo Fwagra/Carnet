@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Observers\PhotoObserver;
 use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
@@ -11,7 +12,16 @@ class Photo extends Model
     protected $pathImagesThumb = 'uploads/photos/thumb/';
 
 
-    /**
+  /**
+   * Set observer for photos
+   */
+  public static function boot() {
+    parent::boot();
+
+    Photo::observe(new PhotoObserver());
+  }
+
+  /**
     * Return the path for the "Thumb" version of an image
     */
     public function getThumb()
