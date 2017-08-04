@@ -34,10 +34,6 @@
 .steps-list{
     .mdl-card{
         overflow: visible;
-      background: none;
-      .mdl-card__supporting-text{
-        background: #FFF;
-      }
     }
     .step-wrapper{
         padding: 0;
@@ -55,7 +51,15 @@
         }
     }
 }
-
+.steps-list {
+  .mdl-card {
+    overflow: visible;
+    background: none;
+    .mdl-card__supporting-text {
+      background: #fff;
+    }
+  }
+}
 // Steps list
 .add-step{
     position: absolute;
@@ -105,7 +109,7 @@
         top:auto;
     }
     .first:after{
-        background: #FF6C4D;;
+        background: #FF6C4D;
     }
     .last:before{
         height: 50%;
@@ -116,11 +120,11 @@
         background: #9CCC65;
     }
     .final:after{
-        background-color: #eee;
-    background-image: linear-gradient(45deg, #888 25%, transparent 25%, transparent 75%, #888 75%, #888),
-    linear-gradient(-45deg, #888 25%, transparent 25%, transparent 75%, #888 75%, #888);
-    background-size: 10px 10px;
-    background-position: 7px;
+        background-color:  #FF6C4D;
+    //background-image: linear-gradient(45deg, #888 25%, transparent 25%, transparent 75%, #888 75%, #888),
+    //linear-gradient(-45deg, #888 25%, transparent 25%, transparent 75%, #888 75%, #888);
+    //background-size: 10px 10px;
+    //background-position: 7px;
 
     }
     .first .pulse{
