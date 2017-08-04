@@ -27,7 +27,7 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trips = Trip::all();
+        $trips = Trip::orderBy('id', 'desc')->get();
         return View::make('home', compact('trips'));
     }
 
