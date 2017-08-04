@@ -375,3 +375,14 @@ dialog .pager{
     border: 4px dashed #607D8B;
     background: #CFD8DC;
 }
+.dropzone .dz-preview {
+    box-sizing: border-box;
+    width: 33% !important;
+    margin:0em !important;
+    padding: 0.5rem!important;
+    background: none !important;
+    .dz-image{
+        width: auto !important;
+        height: auto !important;
+    }
+}
