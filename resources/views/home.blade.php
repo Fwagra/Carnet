@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', trans('trip.home_title'))
+@section('meta-desc', env("HOME_DESC"))
 @section('content')
 <div class="content-grid mdl-grid trip-list">
     <?php $i = 1; ?>

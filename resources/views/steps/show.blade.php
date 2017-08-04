@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', trans('step.step_title', ['name' => $step->name] ))
+@section('meta-desc', str_limit(strip_tags($step->html_value), 150))
 @section('content')
     <div class="mdl-grid content-grid show-step">
         {{-- Resume of the step block --}}

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', $trip->name)
+@section('meta-desc', $trip->description)
 @section('content')
 <div class="content-grid mdl-grid steps-list">
     <div class="mdl-card mdl-cell mdl-cell--12-col trip-head">

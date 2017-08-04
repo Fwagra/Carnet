@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title') - Carnet</title>
+    <meta name="description" content="@yield('meta-desc')"/>
     <script async src="{{ URL::asset('js/polyfill.js') }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{URL::asset('css/dialog-polyfill.css')}}">
