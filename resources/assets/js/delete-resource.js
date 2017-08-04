@@ -1,5 +1,6 @@
 var dialog = document.querySelector('dialog.delete-dialog');
 var deleteBtn = jQuery('.delete-btn', dialog);
+var confirmationInput = jQuery('.delete-input-wrapper', dialog);
 
 if(dialog  != null){
     // Fallback for old browsers with polyfill
@@ -18,10 +19,18 @@ jQuery('.delete_resource').on('click', function(event) {
     event.preventDefault();
     var id = jQuery(this).data('delete');
     var type = jQuery(this).data('type');
+    var confirmation = (jQuery(this).data('confirmation') === undefined)? 1 : jQuery(this).data('confirmation');
+
     formDelete = jQuery('.form-delete-'+id);
     //Reset modal
     jQuery('.delete-input', dialog).val("");
-    deleteBtn.attr('disabled', 'disabled');
+    if (confirmation === 1){
+      deleteBtn.attr('disabled', 'disabled');
+      confirmationInput.show();
+    } else{
+      confirmationInput.hide();
+      deleteBtn.removeAttr('disabled');
+    }
 
     // Set the popup texts
     dialog.querySelector('.mdl-dialog__title').innerHTML = popup_texts[type].title;

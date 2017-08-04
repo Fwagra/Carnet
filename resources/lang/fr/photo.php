@@ -16,6 +16,8 @@ return [
     'backto_photo_btn' => "Revenir aux photos",
     'change_featured_photo' => "Modifier la photo de tête",
     'close_popup' => "Fermer",
+    'deletion_confirmation' => 'Suppression',
+    'delete_msg' => 'Êtes-vous sûr de vouloir supprimer cette photo?',
     'delete_tooltip' => "Supprimer la photo",
     'description_form' => "Petit texte explicatif, descriptif, narratif ou autre mot  en '...if'",
     'dropzone_message' => "Cliquez ici ou faites glisser vos images dans le cadre",

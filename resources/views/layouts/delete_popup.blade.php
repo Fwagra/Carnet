@@ -4,7 +4,7 @@
       <p class="popup-message">
 
       </p>
-      <div class="mdl-textfield mdl-js-textfield">
+      <div class="mdl-textfield mdl-js-textfield delete-input-wrapper" style="display: none;">
           {!! Form::text('delete_input',null, ['class' => 'mdl-textfield__input delete-input', 'data-keyword' => trans('trip.keyword_delete')]) !!}
           {!! Form::label('delete_input', trans('trip.delete_label_form'), ['class' => "mdl-textfield__label"])!!}
       </div>
@@ -27,6 +27,10 @@
         comment:{
             title:"{!! trans('comment.deletion_confirmation') !!}",
             msg:"{!! trans('comment.delete_msg') !!}"
+        },
+        photo:{
+            title:"{!! trans('photo.deletion_confirmation') !!}",
+            msg:"{!! trans('photo.delete_msg') !!}"
         }
     };
 </script>

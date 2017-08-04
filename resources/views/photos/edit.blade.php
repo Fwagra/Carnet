@@ -6,8 +6,13 @@
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">{!! trans('photo.edit_photos_title') !!}</h2>
                 <div class="section-spacer"></div>
-                {{ Form::open(['url' => route('photo.destroy', $photo->id), 'method' => 'DELETE']) }}
-                    <button id="delete_btn" class="mdl-button mdl-js-button mdl-button--icon">
+                {{ Form::open([
+                    'url' => route('photo.destroy', $photo->id),
+                    'method' => 'DELETE',
+                    "class" => "form-delete-".$photo->id
+                ]) }}
+                    <button id="delete_btn" class="delete_resource mdl-button mdl-js-button mdl-button--icon"
+                            data-type="photo" data-delete="{{ $photo->id }}" data-confirmation="0">
                       <i class="material-icons">delete_forever</i>
                     </button>
                     <div class="mdl-tooltip" for="delete_btn">
@@ -21,4 +26,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('footer')
+    @include('layouts.delete_popup')
 @endsection
