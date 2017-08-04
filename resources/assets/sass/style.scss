@@ -249,10 +249,6 @@
     .title{
         font-weight: bold;
         margin-right: .3rem;
-        &:after{
-            content:" - ";
-            display: inline;
-        }
     }
 }
 

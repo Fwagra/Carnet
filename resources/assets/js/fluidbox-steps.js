@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
             .find('.title')
             .text($img.attr('title'))
             .next('.caption')
-            .text($img.attr('alt'));
+            .text(($img.attr('alt').length > 0)? '- ' + $img.attr('alt') : '');
         }
     })
     .on('closestart.fluidbox', function() {
