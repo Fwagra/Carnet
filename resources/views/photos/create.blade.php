@@ -12,6 +12,10 @@
                 </p>
                 @include('photos.add-form')
             </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <div class="section-spacer"></div>
+                <a class="btn mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect mdl-button--primary" href="{{ route('photo.index') }}">{{ trans('photo.backto_photo_btn') }}</a>
+            </div>
         </div>
     </div>
 @endsection

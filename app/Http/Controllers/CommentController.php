@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
-use App\Comment;
 use Redirect;
 use URL;
 use Toastr;
