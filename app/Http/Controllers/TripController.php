@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Trip;
+use Auth;
 use App\Http\Requests;
 use Toastr;
 use View;
@@ -67,7 +68,11 @@ class TripController extends Controller
      */
     public function show($trip)
     {
-        $steps = $trip->steps()->where('active', '1')->orderBy('date', 'desc')->orderBy('id', 'desc')->with('photos')->get();
+        if (Auth::check()) {
+            $steps = $trip->steps()->orderBy('date', 'desc')->orderBy('id', 'desc')->with('photos')->get();
+        } else {
+            $steps = $trip->steps()->where('active', '1')->orderBy('date', 'desc')->orderBy('id', 'desc')->with('photos')->get();
+        }
         $dates = $this->tripDates($trip);
         $km = $this->tripKms($trip);
         return View::make('trips.show', compact('trip', 'steps', 'dates', 'km'));

@@ -80,7 +80,11 @@
             <div class="mdl-cell mdl-cell--10-col">
               <div class="mdl-card__title mdl-card__media" {!! $bg !!}>
                   <a class="absolute-link" href="{{ route('trip.step.show', [$trip->slug, $step->id])}}"></a>
-                  <h2 class="mdl-card__title-text"><a href="{{ route('trip.step.show', [$trip->slug, $step->id])}}"><i class="mdl-icon-toggle__label material-icons">{{$step->type}}</i>{{ $step->name }}</a></h2>
+                    <h2 class="mdl-card__title-text"><a href="{{ route('trip.step.show', [$trip->slug, $step->id])}}"><i class="mdl-icon-toggle__label material-icons">{{$step->type}}</i>{{ $step->name }}
+                    @if ($step->active == 0)
+                      - {!! trans('step.unpublished') !!}
+                    @endif
+                  </a></h2>
               </div>
               <div class="mdl-card__supporting-text">
                   <div class="mdl-grid">

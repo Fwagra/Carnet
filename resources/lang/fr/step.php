@@ -48,6 +48,7 @@ return [
     'submit_btn' => "Sauvegarder l'étape",
     'submit_comment_btn' => "Envoyer un soutien !",
     'type_form' => "Moyen de locomotion",
+    'unpublished' => "Non publié",
     'update_success_msg' => "L'étape a bien été modifiée",
     'walk_option' => "Marche",
 ];
