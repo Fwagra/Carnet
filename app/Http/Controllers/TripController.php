@@ -89,13 +89,13 @@ class TripController extends Controller
         $first_step = $trip->steps()->firstStep()->first();
         $last_step = $trip->steps()->lastStep()->first();
         $dates = '';
-        if(!count($first_step) && !count($last_step)){
+        if(is_null($first_step) && is_null($last_step)){
             $dates = trans('trip.not_begun');
         }
-        if(!$trip->finished && count($first_step)){
+        if(!$trip->finished && !is_null($first_step)){
             $dates = $first_step->date->format('d-m-Y') . ' - ' . trans('trip.date_not_finished');
         }
-        if($trip->finished && count($last_step)){
+        if($trip->finished && !is_null($last_step)){
             $dates = $first_step->date->format('d-m-Y') . ' - ' . $last_step->date->format('d-m-Y');
         }
 
